@@ -1,0 +1,2101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>M&M Fashion</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+
+<body>
+
+    <!-- =========================================
+     NAVBAR
+========================================= -->
+
+<header class="site-header">
+
+    <!-- =========================================
+     SEARCH PANEL
+========================================= -->
+
+<div
+    class="search-panel"
+    id="searchPanel"
+    aria-hidden="true"
+>
+
+    <div class="search-panel-inner">
+
+        <form
+            class="search-form"
+            id="searchForm"
+        >
+
+            <label
+                for="searchInput"
+                class="sr-only"
+            >
+                Search products
+            </label>
+
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search products..."
+                autocomplete="off"
+            >
+
+            <button
+                type="submit"
+                class="search-submit"
+                aria-label="Submit search"
+            >
+                →
+            </button>
+
+        </form>
+
+
+        <button
+            type="button"
+            class="search-close"
+            id="searchClose"
+            aria-label="Close search"
+        >
+            ×
+        </button>
+
+    </div>
+
+</div>
+
+    <nav class="navbar container" aria-label="Main navigation">
+
+        <!-- Brand -->
+        <a href="index.html" class="brand-logo" aria-label="M&M Fashion Home">
+            <img
+                src="./assets/images/logo/mm-logo.jpg"
+                alt="M&M Fashion"
+                class="rounded-[50%] w-10 h-1"
+            >
+        </a>
+
+
+        <!-- Desktop Navigation -->
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="shop.html">Shop</a>
+            </li>
+
+            <li>
+                <a href="index.html#latestDrop">New Arrivals</a>
+            </li>
+
+            <li>
+                <a href="shop.html?filter=men">Men</a>
+            </li>
+
+            <li>
+                <a href="shop.html?filter=unisex">Unisex</a>
+            </li>
+
+            <li>
+                <a href="index.html#collection">
+                    Collections
+                </a>
+            </li>
+
+        </ul>
+
+
+        <!-- Navigation Actions -->
+        <div class="nav-actions">
+
+            <!-- Search -->
+            <button
+    class="nav-icon-btn nav-tooltip"
+    id="searchBtn"
+    type="button"
+    aria-label="Search"
+    data-tooltip="Search"
+>
+    <svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+    >
+        <circle cx="11" cy="11" r="6.5"></circle>
+        <path d="M16 16L21 21"></path>
+    </svg>
+</button>
+
+
+            <!-- Account -->
+            
+            <button
+    type="button"
+    class="nav-icon-btn nav-tooltip auth-account-trigger"
+    id="accountBtn"
+    aria-label="Account"
+    data-tooltip="Account"
+>
+    <svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+    >
+        <circle
+            cx="12"
+            cy="8"
+            r="3.5"
+        ></circle>
+
+        <path
+            d="M5 21C5.5 16.8 8 14.5 12 14.5C16 14.5 18.5 16.8 19 21"
+        ></path>
+    </svg>
+</button>
+
+            <!-- Wishlist -->
+            <a
+    href="wishlist.html"
+    class="nav-icon-btn nav-tooltip"
+    aria-label="Wishlist"
+    data-tooltip="Wishlist"
+>
+    <svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+    >
+        <path d="M20.8 8.8C20.8 13.5 12 20 12 20S3.2 13.5 3.2 8.8C3.2 6 5.2 4 7.7 4C9.4 4 10.9 4.9 12 6.2C13.1 4.9 14.6 4 16.3 4C18.8 4 20.8 6 20.8 8.8Z"></path>
+    </svg>
+</a>
+
+            <!-- Cart -->
+            <button
+    type="button"
+    class="nav-icon-btn cart-icon nav-tooltip"
+    id="cartBtn"
+    aria-label="Shopping cart"
+    data-tooltip="Cart"
+>
+    <svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+    >
+        <path d="M4 5H6L8 17H19L21 8H7"></path>
+        <circle cx="9" cy="20" r="1"></circle>
+        <circle cx="18" cy="20" r="1"></circle>
+    </svg>
+
+    <span
+        class="cart-count"
+        id="cartCount"
+        aria-label="0 items in cart"
+    >
+        0
+    </span>
+</button>
+
+               
+
+
+        <!-- Mobile Menu Button -->
+        <button
+            class="mobile-menu-btn"
+            id="mobileMenuBtn"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="mobileNav"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    </nav>
+
+
+    <!-- Mobile Navigation -->
+    <div
+        class="mobile-nav"
+        id="mobileNav"
+        aria-hidden="true"
+    >
+
+        <ul>
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="shop.html">Shop</a>
+            </li>
+
+            <li>
+                <a href="index.html#latestDrop">
+                    New Arrivals
+                </a>
+            </li>
+
+            <li>
+                <a href="shop.html?filter=men">
+                    Men
+                </a>
+            </li>
+
+            <li>
+                <a href="shop.html?filter=unisex">
+                    Unisex
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#collection">
+                    Collections
+                </a>
+            </li>
+
+            <li class="mobile-nav-divider"></li>
+
+            <li>
+             <li>
+    <li>
+    <button
+        type="button"
+        class="mobile-auth-account auth-account-trigger"
+    >
+        Account
+    </button>
+</li>
+            </li>
+
+            <li>
+                <a href="wishlist.html">Wishlist</a>
+            </li>
+
+            <li>
+                <a href="cart.html">Cart</a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</header>
+
+
+    <!-- =========================================
+     HERO SECTION
+========================================= -->
+
+<main>
+
+    <section class="hero">
+
+        <!-- Hero Image -->
+        <img
+            src="./assets/images/banners/hero.jpg"
+            alt="M&M Fashion new season collection"
+            class="hero-image"
+        >
+
+        <!-- Dark Overlay -->
+        <div class="hero-overlay"></div>
+
+
+        <!-- Hero Content -->
+        <div class="hero-content container">
+
+            <p class="hero-eyebrow">
+                NEW SEASON
+            </p>
+
+            <h1 class="hero-title">
+                DEFINE YOUR
+                <span>EVERYDAY.</span>
+            </h1>
+
+            <p class="hero-description">
+                Contemporary fashion designed for
+                everyday confidence, comfort and style.
+            </p>
+
+            <a
+                href="shop.html"
+                class="btn btn-primary hero-btn"
+            >
+                Shop Now
+            </a>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- =========================================
+     NEW ARRIVALS
+========================================= -->
+
+<section
+    class="new-arrivals section"
+    id="latestDrop"
+>
+
+    <div class="container">
+
+        <!-- Section Header -->
+        <div class="section-header">
+
+            <div>
+                <p class="section-eyebrow">
+                    FRESH FROM M&M
+                </p>
+
+                <h2 class="section-title">
+                    Latest Drop
+                </h2>
+            </div>
+
+            <a
+                href="shop.html?category=new"
+                class="section-link"
+            >
+                View All
+                <span aria-hidden="true">→</span>
+            </a>
+
+        </div>
+
+
+        <!-- Product Grid -->
+        <div class="products-grid">
+
+
+            <!-- Product 01 -->
+            <article class="product-card">
+
+                <div class="product-image-wrapper">
+
+                    <a
+                        href="product.html?id=1"
+                        class="product-image-link"
+                    >
+                        <img
+                            src="./assets/images/products/product-01.jpg"
+                            alt="M&M Relaxed Fit Long-sleeved resort shirt"
+                            class="product-image"
+                            loading="lazy"
+                        >
+                    </a>
+
+                    <span class="product-badge">
+                        New
+                    </span>
+
+                    <button
+                        type="button"
+                        class="wishlist-btn"
+                        data-product-id="1"
+                        aria-label="Add Relaxed Fit Long-sleeved resort shirt to wishlist"
+                        data-tooltip="Add to Wishlist"
+                    >
+                        ♡
+                    </button>
+
+                </div>
+
+                 <button
+    type="button"
+    class="add-to-cart-btn"
+    data-product-id="1"
+>
+    Add to Cart
+</button>
+
+                <div class="product-info">
+
+                    <p class="product-category">
+                        MEN
+                    </p>
+
+                    <h3 class="product-name">
+                        Relaxed Fit Long-sleeved resort shirt
+                    </h3>
+
+                    <div class="product-price">
+                        ₹2,299
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Product 02 -->
+            <article class="product-card">
+
+                <div class="product-image-wrapper">
+
+                    <a
+                        href="product.html?id=2"
+                        class="product-image-link"
+                    >
+                        <img
+                            src="./assets/images/products/product-02.jpg"
+                            alt="M&M Slim Fit Polo T-shirt"
+                            class="product-image"
+                            loading="lazy"
+                        >
+                    </a>
+
+                    <span class="product-badge">
+                        New
+                    </span>
+
+                    <button
+                        type="button"
+                        class="wishlist-btn"
+                        data-product-id="2"
+                        aria-label="Add Slim Fit Polo T-shirt to wishlist"
+                        data-tooltip="Add to Wishlist"
+                    >
+                        ♡
+                    </button>
+
+                </div>
+
+                <button
+    type="button"
+    class="add-to-cart-btn"
+    data-product-id="2"
+>
+    Add to Cart
+</button>
+
+                <div class="product-info">
+
+                    <p class="product-category">
+                        MEN
+                    </p>
+
+                    <h3 class="product-name">
+                        Slim Fit Polo T-shirt
+                    </h3>
+
+                    <div class="product-price">
+                        ₹2,199
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Product 03 -->
+            <article class="product-card">
+
+                <div class="product-image-wrapper">
+
+                    <a
+                        href="product.html?id=3"
+                        class="product-image-link"
+                    >
+                        <img
+                            src="./assets/images/products/product-03.jpg"
+                            alt="M&M Beige Slim fit Tailored Trouser"
+                            class="product-image"
+                            loading="lazy"
+                        >
+                    </a>
+
+                    <button
+                        type="button"
+                        class="wishlist-btn"
+                        data-product-id="3"
+                        aria-label="Add Beige Slim fit Tailored Trouser to wishlist"
+                        data-tooltip="Add to Wishlist"
+                    >
+                        ♡
+                    </button>
+
+
+                </div>
+
+                
+                    <button
+    type="button"
+    class="add-to-cart-btn"
+    data-product-id="3"
+>
+    Add to Cart
+</button>
+
+                <div class="product-info">
+
+                    <p class="product-category">
+                        UNISEX
+                    </p>
+
+                    <h3 class="product-name">
+                        Beige Slim fit Tailored Trouser
+                    </h3>
+
+                    <div class="product-price">
+                        ₹1,499
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Product 04 -->
+            <article class="product-card">
+
+                <div class="product-image-wrapper">
+
+                    <a
+                        href="product.html?id=4"
+                        class="product-image-link"
+                    >
+                        <img
+                            src="./assets/images/products/product-04.jpg"
+                            alt="M&M Black Collared jacket"
+                            class="product-image"
+                            loading="lazy"
+                        >
+                    </a>
+
+                    <span class="product-badge sale">
+                        Sale
+                    </span>
+
+                    <button
+                        type="button"
+                        class="wishlist-btn"
+                        data-product-id="4"
+                        aria-label="Add Black Collared jacket to wishlist"
+                        data-tooltip="Add to Wishlist"
+                    >
+                        ♡
+                    </button>
+
+
+                </div>
+
+                
+                    <button
+    type="button"
+    class="add-to-cart-btn"
+    data-product-id="4"
+>
+    Add to Cart
+</button>
+
+                <div class="product-info">
+
+                    <p class="product-category">
+                        MEN
+                    </p>
+
+                    <h3 class="product-name">
+                        Black Collared jacket
+                    </h3>
+
+                    <div class="product-price">
+
+                        <span class="current-price">
+                            ₹2,499
+                        </span>
+
+                        <span class="old-price">
+                            ₹4,999 
+                        </span>
+
+                         
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Product 05 -->
+            <article class="product-card">
+
+                <div class="product-image-wrapper">
+
+                    <a
+                        href="product.html?id=5"
+                        class="product-image-link"
+                    >
+                        <img
+                            src="./assets/images/products/product-05.jpg"
+                            alt="M&M Dark brown Relaxed Fit Long-sleeved T-shirt"
+                            class="product-image"
+                            loading="lazy"
+                        >
+                    </a>
+
+                    <span class="product-badge">
+                        New
+                    </span>
+
+                    <button
+                        type="button"
+                        class="wishlist-btn"
+                        data-product-id="5"
+                        aria-label="Add Dark brown Relaxed Fit Long-sleeved T-shirt to wishlist"
+                        data-tooltip="Add to Wishlist"
+                    >
+                        ♡
+                    </button>
+
+
+                </div>
+
+                
+                    <button
+    type="button"
+    class="add-to-cart-btn"
+    data-product-id="5"
+>
+    Add to Cart
+</button>
+
+                <div class="product-info">
+
+                    <p class="product-category">
+                          UNISEX
+                    </p>
+
+                    <h3 class="product-name">
+                        Dark brown Relaxed Fit Long-sleeved T-shirt
+                    </h3>
+
+                    <div class="product-price">
+                        ₹1,499
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Product 06 -->
+            <article class="product-card">
+
+                <div class="product-image-wrapper">
+
+                    <a
+                        href="product.html?id=6"
+                        class="product-image-link"
+                    >
+                        <img
+                            src="./assets/images/products/product-06.jpg"
+                            alt="M&M Navy blue Regular Fit Resort shirt"
+                            class="product-image"
+                            loading="lazy"
+                        >
+                    </a>
+
+                    <span class="product-badge sale">
+                        Sale
+                    </span>
+
+                    <button
+                        type="button"
+                        class="wishlist-btn"
+                        data-product-id="6"
+                        aria-label="Add Navy blue Regular Fit Resort shirt to wishlist"
+                        data-tooltip="Add to Wishlist"
+                    >
+                        ♡
+                    </button>
+
+                </div>
+                
+                    <button
+    type="button"
+    class="add-to-cart-btn"
+    data-product-id="6"
+>
+    Add to Cart
+</button>
+
+                <div class="product-info">
+
+                    <p class="product-category">
+                        MEN
+                    </p>
+
+                    <h3 class="product-name">
+                        Navy blue Regular Fit Resort shirt
+                    </h3>
+
+                    <div class="product-price">
+
+                        <span class="current-price">
+                            ₹639
+                        </span>
+
+                        <span class="old-price">
+                            ₹2,099 
+                        </span>
+
+                         
+
+                    
+
+                </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Product 07 -->
+            <article class="product-card">
+
+                <div class="product-image-wrapper">
+
+                    <a
+                        href="product.html?id=7"
+                        class="product-image-link"
+                    >
+                        <img
+                            src="./assets/images/products/product-07.jpg"
+                            alt="M&M Beige Slim Fit Ribbed Henley shirt"
+                            class="product-image"
+                            loading="lazy"
+                        >
+                    </a>
+
+                    <span class="product-badge">
+                        New
+                    </span>
+
+                    <button
+                        type="button"
+                        class="wishlist-btn"
+                        data-product-id="7"
+                        aria-label="Add Beige Slim Fit Ribbed Henley shirt to wishlist"
+                        data-tooltip="Add to Wishlist"
+                    >
+                        ♡
+                    </button>
+
+                </div>
+
+                
+                    <button
+    type="button"
+    class="add-to-cart-btn"
+    data-product-id="7"
+>
+    Add to Cart
+</button>
+
+                <div class="product-info">
+
+                    <p class="product-category">
+                        MEN
+                    </p>
+
+                    <h3 class="product-name">
+                        Beige Slim Fit Ribbed Henley shirt
+                    </h3>
+
+                    <div class="product-price">
+                        ₹2,299
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Product 08 -->
+            <article class="product-card">
+
+                <div class="product-image-wrapper">
+
+                    <a
+                        href="product.html?id=8"
+                        class="product-image-link"
+                    >
+                        <img
+                            src="./assets/images/products/product-08.jpg"
+                            alt="M&M Regular Fit Felted overshirt"
+                            class="product-image"
+                            loading="lazy"
+                        >
+                    </a>
+
+                    <button
+                        type="button"
+                        class="wishlist-btn"
+                        data-product-id="8"
+                        aria-label="Add Regular Fit Felted overshirt to wishlist"
+                        data-tooltip="Add to Wishlist"
+                    >
+                        ♡
+                    </button>
+
+
+                </div>
+
+                                    <button
+    type="button"
+    class="add-to-cart-btn"
+    data-product-id="8"
+>
+    Add to Cart
+</button>
+
+                <div class="product-info">
+
+                    <p class="product-category">
+                        MEN
+                    </p>
+
+                    <h3 class="product-name">
+                        Regular Fit Felted overshirt
+                    </h3>
+
+                    <div class="product-price">
+                        ₹2,999
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     EXPLORE THE COLLECTION
+========================================= -->
+
+<section class="collection-section section" id="collection">
+
+    <div class="container">
+
+        <!-- Section Header -->
+        <div class="collection-header">
+
+            <div>
+                <p class="section-eyebrow">
+                    FIND YOUR STYLE
+                </p>
+
+                <h2 class="collection-title">
+                    Explore the Collection
+                </h2>
+            </div>
+
+            <p class="collection-intro">
+                Everyday essentials, contemporary silhouettes,
+                and pieces designed to move with you.
+            </p>
+
+        </div>
+
+
+        <!-- Collection Grid -->
+        <div class="collection-grid">
+
+
+            <!-- MEN -->
+            <a
+                href="shop.html?filter=men"
+                class="collection-card collection-card-men"
+                aria-label="Shop Men's collection"
+            >
+
+                <img
+                    src="./assets/images/categories/men.jpg"
+                    alt="Men's fashion collection"
+                    class="collection-image"
+                    loading="lazy"
+                >
+
+                <div class="collection-overlay"></div>
+
+                <div class="collection-content">
+
+                    <div class="collection-bottom">
+
+                        <h3 class="collection-name">
+                            Men
+                        </h3>
+
+                        <span class="collection-link">
+                            Shop Men
+                            <span aria-hidden="true">→</span>
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- UNISEX -->
+            <a
+                href="shop.html?filter=unisex"
+                class="collection-card collection-card-unisex"
+                aria-label="Shop Unisex collection"
+            >
+
+                <img
+                    src="./assets/images/categories/unisex.jpg"
+                    alt="Unisex fashion collection"
+                    class="collection-image"
+                    loading="lazy"
+                >
+
+                <div class="collection-overlay"></div>
+
+                <div class="collection-content">
+
+
+                    <div class="collection-bottom">
+
+                        <h3 class="collection-name">
+                            Unisex
+                        </h3>
+
+                        <span class="collection-link">
+                            Shop Unisex
+                            <span aria-hidden="true">→</span>
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================
+     CAMPAIGN SLIDER
+========================================= -->
+
+<section class="campaign-section" id="campaign">
+
+    <div class="campaign-slider">
+
+        <!-- SLIDE 01 -->
+        <article class="campaign-slide active">
+
+            <img
+                src="./assets/images/compaigns/formal.jpg"
+                alt="M&M Formal Collection"
+                class="campaign-image"
+            >
+
+            <div class="campaign-overlay"></div>
+
+            <div class="campaign-content">
+
+
+
+                <h2 class="campaign-title">
+                    Formal
+                </h2>
+
+                <a
+                    href="shop.html?category=formal"
+                    class="campaign-button"
+                >
+                    Shop Formal
+                    <span aria-hidden="true">→</span>
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- SLIDE 02 -->
+        <article class="campaign-slide">
+
+            <img
+                src="./assets/images/compaigns/accessories.jpg"
+                alt="M&M Accessories Collection"
+                class="campaign-image"
+                loading="lazy"
+            >
+
+            <div class="campaign-overlay"></div>
+
+            <div class="campaign-content">
+
+
+                <h2 class="campaign-title">
+                    Accessories
+                </h2>
+
+                <a
+                    href="shop.html?category=accessories"
+                    class="campaign-button"
+                >
+                    Shop Accessories
+                    <span aria-hidden="true">→</span>
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- SLIDE 03 -->
+        <article class="campaign-slide">
+
+            <img
+                src="./assets/images/compaigns/winter.jpg"
+                alt="M&M Winter Collection"
+                class="campaign-image"
+                loading="lazy"
+            >
+
+            <div class="campaign-overlay"></div>
+
+            <div class="campaign-content">
+
+
+                <h2 class="campaign-title">
+                    Winter Collection 2026
+                </h2>
+
+                <a
+                    href="shop.html?category=winter"
+                    class="campaign-button"
+                >
+                    Shop Winter
+                    <span aria-hidden="true">→</span>
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- SLIDE 04 -->
+        <article class="campaign-slide">
+
+            <img
+                src="./assets/images/compaigns/cap.jpg"
+                alt="M&M Caps Collection"
+                class="campaign-image"
+                loading="lazy"
+            >
+
+            <div class="campaign-overlay"></div>
+
+            <div class="campaign-content">
+
+
+                <h2 class="campaign-title">
+                    Caps
+                </h2>
+
+                <a
+                    href="shop.html?category=caps"
+                    class="campaign-button"
+                >
+                    Shop Caps
+                    <span aria-hidden="true">→</span>
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- SLIDE 05 -->
+        <article class="campaign-slide">
+
+            <img
+                src="./assets/images/compaigns/basics.jpg"
+                alt="M&M Basics Collection"
+                class="campaign-image"
+                loading="lazy"
+            >
+
+            <div class="campaign-overlay"></div>
+
+            <div class="campaign-content">
+
+
+                <h2 class="campaign-title">
+                    M&M Basics
+                </h2>
+
+                <a
+                    href="shop.html?category=basics"
+                    class="campaign-button"
+                >
+                    Shop Basics
+                    <span aria-hidden="true">→</span>
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- PREVIOUS BUTTON -->
+        <button
+            type="button"
+            class="campaign-arrow campaign-prev"
+            aria-label="Previous campaign"
+        >
+            ←
+        </button>
+
+
+        <!-- NEXT BUTTON -->
+        <button
+            type="button"
+            class="campaign-arrow campaign-next"
+            aria-label="Next campaign"
+        >
+            →
+        </button>
+
+
+        <!-- DOTS -->
+        <div class="campaign-dots">
+
+            <button
+                type="button"
+                class="campaign-dot active"
+                data-slide="0"
+                aria-label="Go to Formal campaign"
+            ></button>
+
+            <button
+                type="button"
+                class="campaign-dot"
+                data-slide="1"
+                aria-label="Go to Accessories campaign"
+            ></button>
+
+            <button
+                type="button"
+                class="campaign-dot"
+                data-slide="2"
+                aria-label="Go to Winter Collection campaign"
+            ></button>
+
+            <button
+                type="button"
+                class="campaign-dot"
+                data-slide="3"
+                aria-label="Go to Caps campaign"
+            ></button>
+
+            <button
+                type="button"
+                class="campaign-dot"
+                data-slide="4"
+                aria-label="Go to M&M Basics campaign"
+            ></button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     NEWSLETTER + STORE SECTION
+========================================= -->
+
+<section class="newsletter-store-section" id="aboutus">
+
+    <div class="newsletter-store-container">
+
+        <!-- =====================================
+             NEWSLETTER SIDE
+        ====================================== -->
+
+        <div class="newsletter-panel">
+
+            <div class="newsletter-top">
+
+               
+
+                <span class="newsletter-eyebrow">
+                    STAY IN THE LOOP
+                </span>
+
+            </div>
+
+
+            <div class="newsletter-main">
+
+                <h4 class="newsletter-title">
+                    Stay
+                    <span>connected.</span>
+                </h4>
+
+                <p class="newsletter-description">
+                    Be the first to discover new arrivals,
+                    collections, special releases and more
+                    from M&M.
+                </p>
+
+
+                <!-- Newsletter Form -->
+
+                <form
+                    class="newsletter-form"
+                    id="newsletterForm"
+                    novalidate
+                >
+
+                    <div class="newsletter-input-wrap">
+
+                        <input
+                            type="email"
+                            id="newsletterEmail"
+                            name="email"
+                            placeholder="Your email address"
+                            autocomplete="email"
+                        >
+
+                        <span class="input-arrow">
+                            →
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="newsletter-submit"
+                    >
+                        Subscribe
+                    </button>
+
+                </form>
+
+
+                <!-- Subscription Message -->
+
+                <div
+                    class="newsletter-message"
+                    id="newsletterMessage"
+                    aria-live="polite"
+                ></div>
+
+            </div>
+
+
+            <div class="newsletter-footer">
+
+                <span>
+                    NEW DROPS
+                </span>
+
+                <span>
+                    EXCLUSIVE UPDATES
+                </span>
+
+                <span>
+                    M&M
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================
+             STORE SIDE
+        ====================================== -->
+
+        <div class="store-panel">
+
+            <div class="store-background-number">
+                
+            </div>
+
+
+            <div class="store-top">
+
+               
+
+                <span class="store-eyebrow">
+                    VISIT OUR STORE
+                </span>
+
+            </div>
+
+
+            <div class="store-main">
+
+               
+
+                <h4 class="store-city">
+                    Kolkata
+                </h4>
+
+
+                <div class="store-location-mark">
+
+                    <span class="location-dot"></span>
+
+                    <span class="location-line"></span>
+
+                </div>
+
+
+                <div class="store-info">
+
+                    <h3>
+                        M&M FASHION
+                    </h3>
+
+                    <p>
+                        2 A, Townshend Rd,<br>
+                        Paddapukur, Bhowanipore,<br>
+                        Kolkata, West Bengal 700025
+                    </p>
+
+                </div>
+
+
+                <div class="store-bottom">
+
+                    <a
+                        href="https://maps.app.goo.gl/nV3FughNnq9uXvtz7"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="store-map-button"
+                    >
+
+                        <span>
+                            Open in Maps
+                        </span>
+
+                        <span class="map-arrow">
+                            ↗
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="tel:+917980517705"
+                        class="store-phone"
+                    >
+                        +91 79805 17705
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="store-footer">
+
+                <span>
+                    MON — SUN
+                </span>
+
+                <span>
+                    KOLKATA
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer class="site-footer">
+
+    <div class="footer-container">
+
+        <!-- BRAND -->
+
+        <div class="footer-brand">
+
+            <a href="#" class="footer-logo">
+                M&M
+            </a>
+
+            <p class="footer-tagline">
+                FASHION
+            </p>
+
+            <p class="footer-description">
+                Contemporary clothing designed for
+                everyday expression.
+            </p>
+
+        </div>
+
+
+        <!-- SHOP -->
+
+        <div class="footer-column">
+
+            <h3>SHOP</h3>
+
+            <ul>
+
+                <li>
+                    <a href="index.html#latestDrop">
+                        New Arrivals
+                    </a>
+                </li>
+
+                <li>
+                    <a href="shop.html?filter=men">
+                        Men
+                    </a>
+                </li>
+
+                <li>
+                    <a href="shop.html?filter=unisex">
+                        Unisex
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html#collection">
+                        Collections
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html#campaign">
+                        Campaigns
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- INFORMATION -->
+
+        <div class="footer-column">
+
+            <h3>INFORMATION</h3>
+
+            <ul>
+
+                <li>
+                    <a href="#aboutus">
+                        About Us
+                    </a>
+                </li>
+
+                <li>
+                    <a href="tel:+917980517705">
+                        Contact
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Shipping
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Returns
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        FAQ
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- SOCIAL -->
+
+        <div class="footer-column footer-social-column">
+
+            <h3>SOCIAL</h3>
+
+            <ul>
+
+                <li>
+                    <a href="https://www.instagram.com/mandmfashion_2025?igsh=MXN0bHIdmc1M3BhOA" target="_blank">
+                        Instagram ↗
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" target="_blank">
+                        Facebook ↗
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" target="_blank">
+                        YouTube ↗
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 M&M Fashion. All rights reserved.
+        </p>
+
+        <div class="footer-legal">
+
+            <a href="#">
+                Privacy Policy
+            </a>
+
+            <a href="#">
+                Terms & Conditions
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+</main>
+
+
+
+
+<!-- =========================================
+     CART DRAWER
+========================================= -->
+
+<div
+    class="cart-drawer-overlay"
+    id="cartDrawerOverlay"
+    aria-hidden="true"
+></div>
+
+
+<aside
+    class="cart-drawer"
+    id="cartDrawer"
+    aria-hidden="true"
+    aria-labelledby="cartDrawerTitle"
+>
+
+<div class="cart-drawer-header">
+
+    <div>
+
+        <span class="cart-drawer-eyebrow">
+            YOUR SELECTION
+        </span>
+
+        <h2 id="cartDrawerTitle">
+            Cart
+        </h2>
+
+    </div>
+
+
+    <div class="cart-header-actions">
+
+        <button
+            type="button"
+            class="clear-cart-btn"
+            id="clearCartBtn"
+        >
+            Clear Cart
+        </button>
+
+        <button
+            type="button"
+            class="cart-drawer-close"
+            id="cartDrawerClose"
+            aria-label="Close shopping cart"
+        >
+            ×
+        </button>
+
+    </div>
+
+</div>
+
+</div>
+
+
+    <div
+        class="cart-items"
+        id="cartItems"
+    >
+        <!-- Products rendered by JavaScript -->
+    </div>
+
+
+    <div class="cart-empty" id="cartEmpty">
+
+        <span class="cart-empty-symbol">
+            ♡
+        </span>
+
+        <h3>
+            Your cart is empty
+        </h3>
+
+        <p>
+            Looks like you haven't added anything yet.
+        </p>
+
+        <button
+            type="button"
+            class="cart-empty-btn"
+            id="cartEmptyClose"
+        >
+            Continue Shopping
+        </button>
+
+    </div>
+
+
+    <div class="cart-drawer-footer">
+
+        <div class="cart-summary">
+
+            <span>
+                Subtotal
+            </span>
+
+            <strong id="cartSubtotal">
+                ₹0
+            </strong>
+
+        </div>
+
+        <p class="cart-note">
+            Shipping and taxes calculated at checkout.
+        </p>
+
+        <a
+            href="cart.html"
+            class="cart-checkout-btn"
+        >
+            View Cart
+            <span>→</span>
+        </a>
+
+    </div>
+
+</aside>
+
+<script src="./js/main.js"></script>
+<script src="./js/products.js"></script>
+<script src="./js/auth.js"></script>
+
+<div
+    class="auth-overlay"
+    id="authOverlay"
+    hidden
+>
+
+    <!-- CLOSE -->
+    <button
+        type="button"
+        class="auth-close"
+        id="authClose"
+        aria-label="Close authentication"
+    >
+        ×
+    </button>
+
+
+    <div class="auth-modal-container">
+
+        <div class="auth-card">
+
+            <!-- BACKGROUND -->
+
+            <div
+                class="auth-bg signup-bg"
+                id="authCardBg"
+            ></div>
+
+
+            <!-- SIGNUP HERO -->
+
+            <section
+                class="auth-hero auth-hero-signup active"
+                id="authSignupHero"
+            >
+
+                <p class="auth-eyebrow">
+                    M&M FASHION
+                </p>
+
+                <h1>
+                    Welcome Back!
+                </h1>
+
+                <p>
+                    Already have an account?
+                    Sign in to continue shopping.
+                </p>
+
+                <button
+                    type="button"
+                    class="auth-outline-btn"
+                    id="showSigninBtn"
+                >
+                    SIGN IN
+                </button>
+
+            </section>
+
+
+            <!-- SIGNUP FORM -->
+
+            <section
+                class="auth-form signup-form active"
+                id="authSignupForm"
+            >
+
+                <div class="auth-form-inner">
+
+                    <h2>
+                        Create Account
+                    </h2>
+
+                    <div class="auth-socials">
+
+                        <button type="button">f</button>
+
+                        <button type="button">𝕏</button>
+
+                        <button type="button">in</button>
+
+                    </div>
+
+                    <p class="auth-divider-text">
+                        Or use your email address
+                    </p>
+
+
+                    <form>
+
+
+<div class="auth-field">
+
+    <label for="signupName">
+        Full Name
+        <span class="required-mark">*</span>
+    </label>
+
+    <input
+        type="text"
+        id="signupName"
+        placeholder="Enter your full name"
+    >
+
+    <small
+        class="auth-field-error"
+        id="signupNameError"
+    ></small>
+
+</div>
+
+
+<div class="auth-field">
+
+    <label for="signupEmail">
+        Email
+        <span class="required-mark">*</span>
+    </label>
+
+    <input
+        type="email"
+        id="signupEmail"
+        placeholder="Enter your email"
+    >
+
+    <small
+        class="auth-field-error"
+        id="signupEmailError"
+    ></small>
+
+</div>
+
+
+<div class="auth-field">
+
+    <label for="signupPhone">
+        Phone
+        <span class="required-mark">*</span>
+    </label>
+
+    <input
+        type="tel"
+        id="signupPhone"
+        placeholder="Enter 10 digit phone number"
+        inputmode="numeric"
+    >
+
+    <small
+        class="auth-field-error"
+        id="signupPhoneError"
+    ></small>
+
+</div>
+
+
+<div class="auth-field">
+
+    <label for="signupPassword">
+        Password
+        <span class="required-mark">*</span>
+    </label>
+
+    <input
+        type="password"
+        id="signupPassword"
+        placeholder="Minimum 8 characters"
+    >
+
+    <small
+        class="auth-field-error"
+        id="signupPasswordError"
+    ></small>
+
+</div>
+
+
+<div class="auth-field">
+
+    <label for="signupConfirmPassword">
+        Confirm Password
+        <span class="required-mark">*</span>
+    </label>
+
+    <input
+        type="password"
+        id="signupConfirmPassword"
+        placeholder="Re-enter your password"
+    >
+
+    <small
+        class="auth-field-error"
+        id="signupConfirmPasswordError"
+    ></small>
+
+</div>
+
+                        <button
+                            type="submit"
+                            class="auth-submit-btn"
+                            
+                        >
+                            CREATE ACCOUNT
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </section>
+
+
+            <!-- SIGNIN HERO -->
+
+            <section
+                class="auth-hero auth-hero-signin"
+                id="authSigninHero"
+            >
+
+                <p class="auth-eyebrow">
+                    M&M FASHION
+                </p>
+
+                <h1>
+                    Hey There!
+                </h1>
+
+                <p>
+                    New to M&M?
+                    Create an account and start shopping.
+                </p>
+
+                <button
+                    type="button"
+                    class="auth-outline-btn"
+                    id="showSignupBtn"
+                >
+                    SIGN UP
+                </button>
+
+            </section>
+
+
+            <!-- SIGNIN FORM -->
+
+            <section
+                class="auth-form signin-form"
+                id="authSigninForm"
+            >
+
+                <div class="auth-form-inner">
+
+                    <h2>
+                        Welcome Back
+                    </h2>
+
+                    <div class="auth-socials">
+
+                        <button type="button">f</button>
+
+                        <button type="button">𝕏</button>
+
+                        <button type="button">in</button>
+
+                    </div>
+
+                    <p class="auth-divider-text">
+                        Or use your email address
+                    </p>
+
+
+                    <form>
+
+                       <div class="auth-field">
+
+    <label for="signinEmail">
+        Email
+        <span class="required-mark">*</span>
+    </label>
+
+    <input
+        type="email"
+        id="signinEmail"
+        placeholder="Enter your email"
+    >
+
+    <small
+        class="auth-field-error"
+        id="signinEmailError"
+    ></small>
+
+</div>
+
+
+<div class="auth-field">
+
+    <label for="signinPassword">
+        Password
+        <span class="required-mark">*</span>
+    </label>
+
+    <input
+        type="password"
+        id="signinPassword"
+        placeholder="Enter your password"
+    >
+
+    <small
+        class="auth-field-error"
+        id="signinPasswordError"
+    ></small>
+
+</div>
+
+                        <a
+                            href="#"
+                            class="forgot-password"
+                        >
+                            Forgot password?
+                        </a>
+
+                        <button
+                            type="submit"
+                            class="auth-submit-btn"
+                            
+                        >
+                            SIGN IN
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </div>
+
+</div>
+</body>
+
+</html>

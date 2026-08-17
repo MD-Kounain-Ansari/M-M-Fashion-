@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Checkout | M&M Fashion</title>
+
+    <link
+        rel="stylesheet"
+        href="./css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
+
+    <header class="site-header">
+
+    <!-- =========================================
+     SEARCH PANEL
+========================================= -->
+
+<div
+    class="search-panel"
+    id="searchPanel"
+    aria-hidden="true"
+>
+
+    <div class="search-panel-inner">
+
+        <form
+            class="search-form"
+            id="searchForm"
+        >
+
+            <label
+                for="searchInput"
+                class="sr-only"
+            >
+                Search products
+            </label>
+
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search products..."
+                autocomplete="off"
+            >
+
+            <button
+                type="submit"
+                class="search-submit"
+                aria-label="Submit search"
+            >
+                →
+            </button>
+
+        </form>
+
+
+        <button
+            type="button"
+            class="search-close"
+            id="searchClose"
+            aria-label="Close search"
+        >
+            ×
+        </button>
+
+    </div>
+
+</div>
+
+    <nav class="navbar container" aria-label="Main navigation">
+
+        <!-- Brand -->
+        <a href="index.html" class="brand-logo" aria-label="M&M Fashion Home">
+            <img
+                src="./assets/images/logo/mm-logo.jpg"
+                alt="M&M Fashion"
+                class="rounded-[50%] w-10 h-1"
+            >
+        </a>
+
+
+        <!-- Desktop Navigation -->
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="shop.html">Shop</a>
+            </li>
+
+            <li>
+                <a href="index.html#latestDrop">New Arrivals</a>
+            </li>
+
+            <li>
+                <a href="shop.html?filter=men">Men</a>
+            </li>
+
+            <li>
+                <a href="shop.html?filter=unisex">Unisex</a>
+            </li>
+
+            <li>
+                <a href="index.html#collection">
+                    Collections
+                </a>
+            </li>
+
+        </ul>
+
+
+        <!-- Navigation Actions -->
+        <div class="nav-actions">
+
+            <!-- Search -->
+            <button
+    class="nav-icon-btn nav-tooltip"
+    id="searchBtn"
+    type="button"
+    aria-label="Search"
+    data-tooltip="Search"
+>
+    <svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+    >
+        <circle cx="11" cy="11" r="6.5"></circle>
+        <path d="M16 16L21 21"></path>
+    </svg>
+</button>
+
+
+            <!-- Account -->
+            
+            <a
+    href="login.html"
+    class="nav-icon-btn nav-tooltip"
+    aria-label="Account"
+    data-tooltip="Account"
+>
+    <svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+    >
+        <circle cx="12" cy="8" r="3.5"></circle>
+        <path d="M5 21C5.5 16.8 8 14.5 12 14.5C16 14.5 18.5 16.8 19 21"></path>
+    </svg>
+</a>
+
+
+            <!-- Wishlist -->
+            <button
+    type="button"
+    class="nav-icon-btn nav-tooltip"
+    id="accountBtn"
+    aria-label="Account"
+    data-tooltip="Account"
+>
+    <svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+    >
+        <circle
+            cx="12"
+            cy="8"
+            r="3.5"
+        ></circle>
+
+        <path
+            d="M5 21C5.5 16.8 8 14.5 12 14.5C16 14.5 18.5 16.8 19 21"
+        ></path>
+    </svg>
+</button>
+
+            <!-- Cart -->
+            <button
+    type="button"
+    class="nav-icon-btn cart-icon nav-tooltip"
+    id="cartBtn"
+    aria-label="Shopping cart"
+    data-tooltip="Cart"
+>
+    <svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+    >
+        <path d="M4 5H6L8 17H19L21 8H7"></path>
+        <circle cx="9" cy="20" r="1"></circle>
+        <circle cx="18" cy="20" r="1"></circle>
+    </svg>
+
+    <span
+        class="cart-count"
+        id="cartCount"
+        aria-label="0 items in cart"
+    >
+        0
+    </span>
+</button>
+
+               
+
+
+        <!-- Mobile Menu Button -->
+        <button
+            class="mobile-menu-btn"
+            id="mobileMenuBtn"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="mobileNav"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    </nav>
+
+
+    <!-- Mobile Navigation -->
+    <div
+        class="mobile-nav"
+        id="mobileNav"
+        aria-hidden="true"
+    >
+
+        <ul>
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="shop.html">Shop</a>
+            </li>
+
+            <li>
+                <a href="index.html#latestDrop">
+                    New Arrivals
+                </a>
+            </li>
+
+            <li>
+                <a href="shop.html?filter=men">
+                    Men
+                </a>
+            </li>
+
+            <li>
+                <a href="shop.html?filter=unisex">
+                    Unisex
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#collection">
+                    Collections
+                </a>
+            </li>
+
+            <li class="mobile-nav-divider"></li>
+
+            <li>
+             <li>
+    <button
+        type="button"
+        class="mobile-auth-account"
+        onclick="openAuthModal(event)"
+    >
+        Account
+    </button>
+</li>
+            </li>
+
+            <li>
+                <a href="wishlist.html">Wishlist</a>
+            </li>
+
+            <li>
+                <a href="cart.html">Cart</a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</header>
+
+
+    <!-- =========================================
+         CHECKOUT
+    ========================================== -->
+
+    <main class="checkout-page">
+
+        <div class="container">
+
+
+            <!-- =====================================
+                 CHECKOUT HEADER
+            ====================================== -->
+
+            <div class="checkout-header">
+
+                <p class="section-eyebrow">
+                    M&M FASHION
+                </p>
+
+                <h1 class="checkout-title">
+                    Checkout
+                </h1>
+
+            </div>
+
+
+            <!-- =====================================
+                 CHECKOUT LAYOUT
+            ====================================== -->
+
+            <div class="checkout-layout">
+
+
+                <!-- =================================
+                     LEFT SIDE
+                ================================== -->
+
+                <section class="checkout-form-section">
+
+
+                    <!-- =================================
+                         CONTACT INFORMATION
+                    ================================== -->
+
+                    <div class="checkout-block">
+
+                        <div class="checkout-block-header">
+
+                            <span class="checkout-step">
+                                01
+                            </span>
+
+                            <h2>
+                                Contact Information
+                            </h2>
+
+                        </div>
+
+
+                        <div class="checkout-fields">
+
+
+                            <!-- EMAIL -->
+
+                            <div class="checkout-field">
+
+                                <label for="checkoutEmail">
+
+                                    Email
+
+                                    <span
+                                        class="required-mark"
+                                        aria-hidden="true"
+                                    >
+                                        *
+                                    </span>
+
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="checkoutEmail"
+                                    name="email"
+                                    placeholder="you@example.com"
+                                    autocomplete="email"
+                                >
+
+                            </div>
+
+
+                            <!-- PHONE -->
+
+                            <div class="checkout-field">
+
+                                <label for="checkoutPhone">
+
+                                    Phone
+
+                                    <span
+                                        class="required-mark"
+                                        aria-hidden="true"
+                                    >
+                                        *
+                                    </span>
+
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="checkoutPhone"
+                                    name="phone"
+                                    placeholder="Phone number"
+                                    inputmode="tel"
+                                    autocomplete="tel"
+                                >
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =================================
+                         DELIVERY ADDRESS
+                    ================================== -->
+
+                    <div class="checkout-block">
+
+                        <div class="checkout-block-header">
+
+                            <span class="checkout-step">
+                                02
+                            </span>
+
+                            <h2>
+                                Delivery Address
+                            </h2>
+
+                        </div>
+
+
+                        <div class="checkout-fields">
+
+
+                            <!-- FULL NAME -->
+
+                            <div
+                                class="checkout-field checkout-field-full"
+                            >
+
+                                <label for="checkoutName">
+
+                                    Full Name
+
+                                    <span
+                                        class="required-mark"
+                                        aria-hidden="true"
+                                    >
+                                        *
+                                    </span>
+
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="checkoutName"
+                                    name="fullName"
+                                    placeholder="Full name"
+                                    autocomplete="name"
+                                >
+
+                            </div>
+
+
+                            <!-- ADDRESS -->
+
+                            <div
+                                class="checkout-field checkout-field-full"
+                            >
+
+                                <label for="checkoutAddress">
+
+                                    Address
+
+                                    <span
+                                        class="required-mark"
+                                        aria-hidden="true"
+                                    >
+                                        *
+                                    </span>
+
+                                </label>
+
+                                <textarea
+                                    id="checkoutAddress"
+                                    name="address"
+                                    rows="3"
+                                    placeholder="House number , Street , Area"
+                                    autocomplete="street-address"
+                                ></textarea>
+
+                            </div>
+
+
+                            <!-- CITY -->
+
+                            <div class="checkout-field">
+
+                                <label for="checkoutCity">
+
+                                    City
+
+                                    <span
+                                        class="required-mark"
+                                        aria-hidden="true"
+                                    >
+                                        *
+                                    </span>
+
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="checkoutCity"
+                                    name="city"
+                                    placeholder="City"
+                                    autocomplete="address-level2"
+                                >
+
+                            </div>
+
+
+                            <!-- STATE -->
+
+                            <div class="checkout-field">
+
+                                <label for="checkoutState">
+
+                                    State
+
+                                    <span
+                                        class="required-mark"
+                                        aria-hidden="true"
+                                    >
+                                        *
+                                    </span>
+
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="checkoutState"
+                                    name="state"
+                                    placeholder="State"
+                                    autocomplete="address-level1"
+                                >
+
+                            </div>
+
+
+                            <!-- PIN CODE -->
+
+                            <div class="checkout-field">
+
+                                <label for="checkoutPincode">
+
+                                    PIN Code
+
+                                    <span
+                                        class="required-mark"
+                                        aria-hidden="true"
+                                    >
+                                        *
+                                    </span>
+
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="checkoutPincode"
+                                    name="pincode"
+                                    placeholder="PIN code"
+                                    inputmode="numeric"
+                                    maxlength="6"
+                                    autocomplete="postal-code"
+                                >
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =================================
+                         DELIVERY METHOD
+                    ================================== -->
+
+                    <div class="checkout-block">
+
+                        <div class="checkout-block-header">
+
+                            <span class="checkout-step">
+                                03
+                            </span>
+
+                            <h2>
+                                Delivery Method
+                            </h2>
+
+                        </div>
+
+
+                        <label class="checkout-option">
+
+                            <input
+                                type="radio"
+                                name="deliveryMethod"
+                                value="standard"
+                                checked
+                            >
+
+                            <span class="checkout-option-content">
+
+                                <strong>
+                                    Standard Delivery
+                                </strong>
+
+                                <small>
+                                    Delivered within
+                                    3–5 business days
+                                </small>
+
+                            </span>
+
+                            <span>
+                                Free
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+                    <!-- =================================
+                         PAYMENT
+                    ================================== -->
+
+                    <div class="checkout-block">
+
+                        <div class="checkout-block-header">
+
+                            <span class="checkout-step">
+                                04
+                            </span>
+
+                            <h2>
+                                Payment
+                            </h2>
+
+                        </div>
+
+
+                        <!-- COD -->
+
+                        <label class="checkout-option">
+
+                            <input
+                                type="radio"
+                                name="paymentMethod"
+                                value="cod"
+                                checked
+                            >
+
+                            <span class="checkout-option-content">
+
+                                <strong>
+                                    Cash on Delivery
+                                </strong>
+
+                                <small>
+                                    Pay when your order arrives
+                                </small>
+
+                            </span>
+
+                        </label>
+
+
+                        <!-- ONLINE PAYMENT -->
+
+                        <label class="checkout-option">
+
+                            <input
+                                type="radio"
+                                name="paymentMethod"
+                                value="online"
+                            >
+
+                            <span class="checkout-option-content">
+
+                                <strong>
+                                    Online Payment
+                                </strong>
+
+                                <small>
+                                    Secure payment at checkout
+                                </small>
+
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+                </section>
+
+
+                <!-- =================================
+                     RIGHT SIDE
+                     ORDER SUMMARY
+                ================================== -->
+
+                <aside class="checkout-summary">
+
+
+                    <h2>
+                        Order Summary
+                    </h2>
+
+
+                    <!-- ITEMS -->
+
+                    <div
+                        class="checkout-summary-items"
+                        id="checkoutSummaryItems"
+                    >
+                        <!--
+                            Generated by checkout.js
+                        -->
+                    </div>
+
+
+                    <!-- SUBTOTAL -->
+
+                    <div class="checkout-summary-row">
+
+                        <span>
+                            Subtotal
+                        </span>
+
+                        <strong id="checkoutSubtotal">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+
+                    <!-- SHIPPING -->
+
+                    <div class="checkout-summary-row">
+
+                        <span>
+                            Shipping
+                        </span>
+
+                        <strong id="checkoutShipping">
+                            Free
+                        </strong>
+
+                    </div>
+
+
+                    <!-- DIVIDER -->
+
+                    <div class="checkout-summary-divider"></div>
+
+
+                    <!-- TOTAL -->
+
+                    <div class="checkout-summary-total">
+
+                        <span>
+                            Total
+                        </span>
+
+                        <strong id="checkoutTotal">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+
+                    <!-- PLACE ORDER -->
+
+                    <button
+                        type="button"
+                        class="checkout-place-order-btn"
+                        id="checkoutPlaceOrder"
+                        disabled
+                    >
+
+                        <span>
+                            Place Order
+                        </span>
+
+                        <span>
+                            →
+                        </span>
+
+                    </button>
+
+
+                    <!-- BACK TO CART -->
+
+                    <a
+                        href="cart.html"
+                        class="checkout-back-link"
+                    >
+                        ← Back to Cart
+                    </a>
+
+
+                </aside>
+
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+<!-- =========================================
+     ORDER CONFIRMATION
+========================================= -->
+
+<section
+    class="order-confirmation"
+    id="orderConfirmation"
+    hidden
+>
+
+    <div class="order-confirmation-inner">
+
+        <div class="order-confirmation-icon">
+            ✓
+        </div>
+
+        <p class="section-eyebrow">
+            M&M FASHION
+        </p>
+
+        <h2>
+            Order Confirmed
+        </h2>
+
+        <p class="order-confirmation-message">
+            Thank you for your purchase.
+            Your order has been placed successfully.
+        </p>
+
+
+        <!-- ORDER NUMBER -->
+
+        <div class="order-confirmation-details">
+
+            <div class="order-confirmation-row">
+
+                <span>
+                    Order Number
+                </span>
+
+                <strong id="confirmationOrderNumber">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="order-confirmation-row">
+
+                <span>
+                    Estimated Delivery
+                </span>
+
+                <strong>
+                    3–5 Business Days
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="order-confirmation-actions">
+
+            <a
+                href="index.html"
+                class="order-confirmation-btn primary"
+            >
+                Continue Shopping
+            </a>
+
+            <a
+                href="shop.html"
+                class="order-confirmation-btn secondary"
+            >
+                View Shop
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+   <footer class="site-footer">
+
+    <div class="footer-container">
+
+        <!-- BRAND -->
+
+        <div class="footer-brand">
+
+            <a href="#" class="footer-logo">
+                M&M
+            </a>
+
+            <p class="footer-tagline">
+                FASHION
+            </p>
+
+            <p class="footer-description">
+                Contemporary clothing designed for
+                everyday expression.
+            </p>
+
+        </div>
+
+
+        <!-- SHOP -->
+
+        <div class="footer-column">
+
+            <h3>SHOP</h3>
+
+            <ul>
+
+                <li>
+                    <a href="index.html#latestDrop">
+                        New Arrivals
+                    </a>
+                </li>
+
+                <li>
+                    <a href="shop.html?filter=men">
+                        Men
+                    </a>
+                </li>
+
+                <li>
+                    <a href="shop.html?filter=unisex">
+                        Unisex
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html#collection">
+                        Collections
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html#campaign">
+                        Campaigns
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- INFORMATION -->
+
+        <div class="footer-column">
+
+            <h3>INFORMATION</h3>
+
+            <ul>
+
+                <li>
+                    <a href="#aboutus">
+                        About Us
+                    </a>
+                </li>
+
+                <li>
+                    <a href="tel:+917980517705">
+                        Contact
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Shipping
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Returns
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        FAQ
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- SOCIAL -->
+
+        <div class="footer-column footer-social-column">
+
+            <h3>SOCIAL</h3>
+
+            <ul>
+
+                <li>
+                    <a href="https://www.instagram.com/mandmfashion_2025?igsh=MXN0bHIdmc1M3BhOA" target="_blank">
+                        Instagram ↗
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" target="_blank">
+                        Facebook ↗
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" target="_blank">
+                        YouTube ↗
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 M&M Fashion. All rights reserved.
+        </p>
+
+        <div class="footer-legal">
+
+            <a href="#">
+                Privacy Policy
+            </a>
+
+            <a href="#">
+                Terms & Conditions
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+<div
+    class="auth-overlay"
+    id="authOverlay"
+    hidden
+>
+
+    <!-- CLOSE -->
+    <button
+        type="button"
+        class="auth-close"
+        id="authClose"
+        aria-label="Close authentication"
+    >
+        ×
+    </button>
+
+
+    <div class="auth-modal-container">
+
+        <div class="auth-card">
+
+            <!-- BACKGROUND -->
+
+            <div
+                class="auth-bg signup-bg"
+                id="authCardBg"
+            ></div>
+
+
+            <!-- SIGNUP HERO -->
+
+            <section
+                class="auth-hero auth-hero-signup active"
+                id="authSignupHero"
+            >
+
+                <p class="auth-eyebrow">
+                    M&M FASHION
+                </p>
+
+                <h1>
+                    Welcome Back!
+                </h1>
+
+                <p>
+                    Already have an account?
+                    Sign in to continue shopping.
+                </p>
+
+                <button
+                    type="button"
+                    class="auth-outline-btn"
+                    id="showSigninBtn"
+                >
+                    SIGN IN
+                </button>
+
+            </section>
+
+
+            <!-- SIGNUP FORM -->
+
+            <section
+                class="auth-form signup-form active"
+                id="authSignupForm"
+            >
+
+                <div class="auth-form-inner">
+
+                    <h2>
+                        Create Account
+                    </h2>
+
+                    <div class="auth-socials">
+
+                        <button type="button">f</button>
+
+                        <button type="button">𝕏</button>
+
+                        <button type="button">in</button>
+
+                    </div>
+
+                    <p class="auth-divider-text">
+                        Or use your email address
+                    </p>
+
+
+                    <form>
+                 <div class="auth-field">
+
+    <label for="signupName">
+        Full Name
+        <span class="required-mark">*</span>
+    </label>
+
+    <input
+        type="text"
+        id="signupName"
+        placeholder="Enter your full name"
+    >
+
+    <small
+        class="auth-field-error"
+        id="signupNameError"
+    ></small>
+
+</div>
+
+
+<div class="auth-field">
+
+    <label for="signupEmail">
+        Email
+        <span class="required-mark">*</span>
+    </label>
+
+    <input
+        type="email"
+        id="signupEmail"
+        placeholder="Enter your email"
+    >
+
+    <small
+        class="auth-field-error"
+        id="signupEmailError"
+    ></small>
+
+</div>
+
+
+<div class="auth-field">
+
+    <label for="signupPhone">
+        Phone
+        <span class="required-mark">*</span>
+    </label>
+
+    <input
+        type="tel"
+        id="signupPhone"
+        placeholder="Enter 10 digit phone number"
+        inputmode="numeric"
+    >
+
+    <small
+        class="auth-field-error"
+        id="signupPhoneError"
+    ></small>
+
+</div>
+
+
+<div class="auth-field">
+
+    <label for="signupPassword">
+        Password
+        <span class="required-mark">*</span>
+    </label>
+
+    <input
+        type="password"
+        id="signupPassword"
+        placeholder="Minimum 8 characters"
+    >
+
+    <small
+        class="auth-field-error"
+        id="signupPasswordError"
+    ></small>
+
+</div>
+
+
+<div class="auth-field">
+
+    <label for="signupConfirmPassword">
+        Confirm Password
+        <span class="required-mark">*</span>
+    </label>
+
+    <input
+        type="password"
+        id="signupConfirmPassword"
+        placeholder="Re-enter your password"
+    >
+
+    <small
+        class="auth-field-error"
+        id="signupConfirmPasswordError"
+    ></small>
+
+</div>
+
+                        <button
+                            type="submit"
+                            class="auth-submit-btn"
+                            
+                        >
+                            CREATE ACCOUNT
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </section>
+
+
+            <!-- SIGNIN HERO -->
+
+            <section
+                class="auth-hero auth-hero-signin"
+                id="authSigninHero"
+            >
+
+                <p class="auth-eyebrow">
+                    M&M FASHION
+                </p>
+
+                <h1>
+                    Hey There!
+                </h1>
+
+                <p>
+                    New to M&M?
+                    Create an account and start shopping.
+                </p>
+
+                <button
+                    type="button"
+                    class="auth-outline-btn"
+                    id="showSignupBtn"
+                >
+                    SIGN UP
+                </button>
+
+            </section>
+
+
+            <!-- SIGNIN FORM -->
+
+            <section
+                class="auth-form signin-form"
+                id="authSigninForm"
+            >
+
+                <div class="auth-form-inner">
+
+                    <h2>
+                        Welcome Back
+                    </h2>
+
+                    <div class="auth-socials">
+
+                        <button type="button">f</button>
+
+                        <button type="button">𝕏</button>
+
+                        <button type="button">in</button>
+
+                    </div>
+
+                    <p class="auth-divider-text">
+                        Or use your email address
+                    </p>
+
+
+                    <form>
+
+                      <div class="auth-field">
+
+    <label for="signinEmail">
+        Email
+        <span class="required-mark">*</span>
+    </label>
+
+    <input
+        type="email"
+        id="signinEmail"
+        placeholder="Enter your email"
+    >
+
+    <small
+        class="auth-field-error"
+        id="signinEmailError"
+    ></small>
+
+</div>
+
+
+<div class="auth-field">
+
+    <label for="signinPassword">
+        Password
+        <span class="required-mark">*</span>
+    </label>
+
+    <input
+        type="password"
+        id="signinPassword"
+        placeholder="Enter your password"
+    >
+
+    <small
+        class="auth-field-error"
+        id="signinPasswordError"
+    ></small>
+
+</div>
+
+                        <a
+                            href="#"
+                            class="forgot-password"
+                        >
+                            Forgot password?
+                        </a>
+
+                        <button
+                            type="submit"
+                            class="auth-submit-btn"
+                            
+                        >
+                            SIGN IN
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </div>
+
+</div>
+    <!-- =========================================
+         SCRIPTS
+    ========================================== -->
+
+    <script src="./js/products.js"></script>
+
+    <script src="./js/main.js"></script>
+
+    <script src="./js/checkout.js"></script>
+
+    <script src="./js/auth.js"></script>
+
+
+</body>
+
+</html>

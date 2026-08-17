@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Shop | M&M Fashion</title>
+
+    <link
+        rel="stylesheet"
+        href="./css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
+
+  <header class="site-header">
+
+    <!-- =========================================
+     SEARCH PANEL
+========================================= -->
+
+<div
+    class="search-panel"
+    id="searchPanel"
+    aria-hidden="true"
+>
+
+    <div class="search-panel-inner">
+
+        <form
+            class="search-form"
+            id="searchForm"
+        >
+
+            <label
+                for="searchInput"
+                class="sr-only"
+            >
+                Search products
+            </label>
+
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search products..."
+                autocomplete="off"
+            >
+
+            <button
+                type="submit"
+                class="search-submit"
+                aria-label="Submit search"
+            >
+                →
+            </button>
+
+        </form>
+
+
+        <button
+            type="button"
+            class="search-close"
+            id="searchClose"
+            aria-label="Close search"
+        >
+            ×
+        </button>
+
+    </div>
+
+</div>
+
+    <nav class="navbar container" aria-label="Main navigation">
+
+        <!-- Brand -->
+        <a href="index.html" class="brand-logo" aria-label="M&M Fashion Home">
+            <img
+                src="./assets/images/logo/mm-logo.jpg"
+                alt="M&M Fashion"
+                class="rounded-[50%] w-10 h-1"
+            >
+        </a>
+
+
+        <!-- Desktop Navigation -->
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="shop.html">Shop</a>
+            </li>
+
+            <li>
+                <a href="index.html#latestDrop">New Arrivals</a>
+            </li>
+
+            <li>
+                <a href="shop.html?filter=men">Men</a>
+            </li>
+
+            <li>
+                <a href="shop.html?filter=unisex">Unisex</a>
+            </li>
+
+            <li>
+                <a href="index.html#collection">
+                    Collections
+                </a>
+            </li>
+
+        </ul>
+
+
+        <!-- Navigation Actions -->
+        <div class="nav-actions">
+
+            <!-- Search -->
+            <button
+    class="nav-icon-btn nav-tooltip"
+    id="searchBtn"
+    type="button"
+    aria-label="Search"
+    data-tooltip="Search"
+>
+    <svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+    >
+        <circle cx="11" cy="11" r="6.5"></circle>
+        <path d="M16 16L21 21"></path>
+    </svg>
+</button>
+
+
+            <!-- Account -->
+            
+           <button
+    type="button"
+    class="nav-icon-btn nav-tooltip"
+    id="accountBtn"
+    aria-label="Account"
+    data-tooltip="Account"
+>
+    <svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+    >
+        <circle
+            cx="12"
+            cy="8"
+            r="3.5"
+        ></circle>
+
+        <path
+            d="M5 21C5.5 16.8 8 14.5 12 14.5C16 14.5 18.5 16.8 19 21"
+        ></path>
+    </svg>
+</button>
+
+
+            <!-- Wishlist -->
+            <a
+    href="wishlist.html"
+    class="nav-icon-btn nav-tooltip"
+    aria-label="Wishlist"
+    data-tooltip="Wishlist"
+>
+    <svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+    >
+        <path d="M20.8 8.8C20.8 13.5 12 20 12 20S3.2 13.5 3.2 8.8C3.2 6 5.2 4 7.7 4C9.4 4 10.9 4.9 12 6.2C13.1 4.9 14.6 4 16.3 4C18.8 4 20.8 6 20.8 8.8Z"></path>
+    </svg>
+</a>
+
+            <!-- Cart -->
+            <button
+    type="button"
+    class="nav-icon-btn cart-icon nav-tooltip"
+    id="cartBtn"
+    aria-label="Shopping cart"
+    data-tooltip="Cart"
+>
+    <svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+    >
+        <path d="M4 5H6L8 17H19L21 8H7"></path>
+        <circle cx="9" cy="20" r="1"></circle>
+        <circle cx="18" cy="20" r="1"></circle>
+    </svg>
+
+    <span
+        class="cart-count"
+        id="cartCount"
+        aria-label="0 items in cart"
+    >
+        0
+    </span>
+</button>
+
+               
+
+
+        <!-- Mobile Menu Button -->
+        <button
+            class="mobile-menu-btn"
+            id="mobileMenuBtn"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="mobileNav"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    </nav>
+
+
+    <!-- Mobile Navigation -->
+    <div
+        class="mobile-nav"
+        id="mobileNav"
+        aria-hidden="true"
+    >
+
+        <ul>
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="shop.html">Shop</a>
+            </li>
+
+            <li>
+                <a href="index.html#latestDrop">
+                    New Arrivals
+                </a>
+            </li>
+
+            <li>
+                <a href="shop.html?filter=men">
+                    Men
+                </a>
+            </li>
+
+            <li>
+                <a href="shop.html?filter=unisex">
+                    Unisex
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#collection">
+                    Collections
+                </a>
+            </li>
+
+            <li class="mobile-nav-divider"></li>
+
+            <li>
+         <li>
+    <button
+        type="button"
+        class="mobile-auth-account"
+        onclick="openAuthModal(event)"
+    >
+        Account
+    </button>
+</li>
+</button>
+            </li>
+
+            <li>
+                <a href="wishlist.html">Wishlist</a>
+            </li>
+
+            <li>
+                <a href="cart.html">Cart</a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</header>
+
+
+
+    <!-- =========================================
+         SHOP PAGE
+    ========================================== -->
+
+    <main>
+
+        <section class="shop-page section">
+
+            <div class="container">
+
+
+                <!-- SHOP HEADER -->
+
+                <div class="shop-header">
+
+                    <div>
+
+                        <p class="section-eyebrow">
+                            M&M COLLECTION
+                        </p>
+
+                        <h1 class="shop-title">
+                            Shop
+                        </h1>
+
+                    </div>
+
+                    <p
+                        class="shop-product-count"
+                        id="shopProductCount"
+                    >
+                        0 Products
+                    </p>
+
+                </div>
+
+                
+
+
+                <!-- =================================
+                     FILTER + SORT
+                ================================== -->
+
+                <div
+    class="shop-search-state"
+    id="shopSearchState"
+    hidden
+>
+    <span>Search results for</span>
+
+    <strong id="shopSearchQuery"></strong>
+
+    <button
+        type="button"
+        id="clearShopSearch"
+        class="clear-shop-search"
+    >
+        Clear Search
+    </button>
+</div>
+
+                <div class="shop-toolbar">
+
+
+                    <!-- FILTERS -->
+
+                    <div
+                        class="shop-filters"
+                        role="group"
+                        aria-label="Product filters"
+                    >
+
+                        <button
+                            type="button"
+                            class="shop-filter active"
+                            data-filter="all"
+                        >
+                            All
+                        </button>
+
+                        <button
+                            type="button"
+                            class="shop-filter"
+                            data-filter="men"
+                        >
+                            Men
+                        </button>
+
+                        <button
+                            type="button"
+                            class="shop-filter"
+                            data-filter="unisex"
+                        >
+                            Unisex
+                        </button>
+
+                        <button
+                            type="button"
+                            class="shop-filter"
+                            data-filter="new"
+                        >
+                            New
+                        </button>
+
+                        <button
+                            type="button"
+                            class="shop-filter"
+                            data-filter="sale"
+                        >
+                            Sale
+                        </button>
+
+                    </div>
+
+
+                    <!-- SORT -->
+
+                    <div class="shop-sort">
+
+                        <label
+                            for="sortProducts"
+                        >
+                            Sort by
+                        </label>
+
+                        <select
+                            id="sortProducts"
+                            name="sortProducts"
+                        >
+
+                            <option value="newest">
+                                Newest
+                            </option>
+
+                            <option value="price-low">
+                                Price: Low to High
+                            </option>
+
+                            <option value="price-high">
+                                Price: High to Low
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================
+                     PRODUCT GRID
+                ================================== -->
+
+                <div
+                    class="shop-product-grid"
+                    id="shopProductGrid"
+                >
+                    <!--
+                        JavaScript will generate
+                        product cards here.
+                    -->
+                </div>
+
+
+                <!-- =================================
+                     NO RESULTS
+                ================================== -->
+
+                <div
+                    class="shop-no-results"
+                    id="shopNoResults"
+                    hidden
+                >
+
+                    <span class="shop-no-results-symbol">
+                        ×
+                    </span>
+
+                    <h2>
+                        No products found
+                    </h2>
+
+                    <p>
+                        Try another category or
+                        change your filters.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="shop-reset-btn"
+                        id="resetShopFilters"
+                    >
+                        Clear Filters
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    
+<footer class="site-footer">
+
+    <div class="footer-container">
+
+        <!-- BRAND -->
+
+        <div class="footer-brand">
+
+            <a href="#" class="footer-logo">
+                M&M
+            </a>
+
+            <p class="footer-tagline">
+                FASHION
+            </p>
+
+            <p class="footer-description">
+                Contemporary clothing designed for
+                everyday expression.
+            </p>
+
+        </div>
+
+
+        <!-- SHOP -->
+
+        <div class="footer-column">
+
+            <h3>SHOP</h3>
+
+            <ul>
+
+                <li>
+                    <a href="index.html#latestDrop">
+                        New Arrivals
+                    </a>
+                </li>
+
+                <li>
+                    <a href="shop.html?filter=men">
+                        Men
+                    </a>
+                </li>
+
+                <li>
+                    <a href="shop.html?filter=unisex">
+                        Unisex
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html#collection">
+                        Collections
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html#campaign">
+                        Campaigns
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- INFORMATION -->
+
+        <div class="footer-column">
+
+            <h3>INFORMATION</h3>
+
+            <ul>
+
+                <li>
+                    <a href="#aboutus">
+                        About Us
+                    </a>
+                </li>
+
+                <li>
+                    <a href="tel:+917980517705">
+                        Contact
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Shipping
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Returns
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        FAQ
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- SOCIAL -->
+
+        <div class="footer-column footer-social-column">
+
+            <h3>SOCIAL</h3>
+
+            <ul>
+
+                <li>
+                    <a href="https://www.instagram.com/mandmfashion_2025?igsh=MXN0bHIdmc1M3BhOA" target="_blank">
+                        Instagram ↗
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" target="_blank">
+                        Facebook ↗
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" target="_blank">
+                        YouTube ↗
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 M&M Fashion. All rights reserved.
+        </p>
+
+        <div class="footer-legal">
+
+            <a href="#">
+                Privacy Policy
+            </a>
+
+            <a href="#">
+                Terms & Conditions
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<div
+    class="auth-overlay"
+    id="authOverlay"
+    hidden
+>
+
+    <!-- CLOSE -->
+    <button
+        type="button"
+        class="auth-close"
+        id="authClose"
+        aria-label="Close authentication"
+    >
+        ×
+    </button>
+
+
+    <div class="auth-modal-container">
+
+        <div class="auth-card">
+
+            <!-- BACKGROUND -->
+
+            <div
+                class="auth-bg signup-bg"
+                id="authCardBg"
+            ></div>
+
+
+            <!-- SIGNUP HERO -->
+
+            <section
+                class="auth-hero auth-hero-signup active"
+                id="authSignupHero"
+            >
+
+                <p class="auth-eyebrow">
+                    M&M FASHION
+                </p>
+
+                <h1>
+                    Welcome Back!
+                </h1>
+
+                <p>
+                    Already have an account?
+                    Sign in to continue shopping.
+                </p>
+
+                <button
+                    type="button"
+                    class="auth-outline-btn"
+                    id="showSigninBtn"
+                >
+                    SIGN IN
+                </button>
+
+            </section>
+
+
+            <!-- SIGNUP FORM -->
+
+            <section
+                class="auth-form signup-form active"
+                id="authSignupForm"
+            >
+
+                <div class="auth-form-inner">
+
+                    <h2>
+                        Create Account
+                    </h2>
+
+                    <div class="auth-socials">
+
+                        <button type="button">f</button>
+
+                        <button type="button">𝕏</button>
+
+                        <button type="button">in</button>
+
+                    </div>
+
+                    <p class="auth-divider-text">
+                        Or use your email address
+                    </p>
+
+
+                    <form>
+          <div class="auth-field">
+
+    <label for="signupName">
+        Full Name
+        <span class="required-mark">*</span>
+    </label>
+
+    <input
+        type="text"
+        id="signupName"
+        placeholder="Enter your full name"
+    >
+
+    <small
+        class="auth-field-error"
+        id="signupNameError"
+    ></small>
+
+</div>
+
+
+<div class="auth-field">
+
+    <label for="signupEmail">
+        Email
+        <span class="required-mark">*</span>
+    </label>
+
+    <input
+        type="email"
+        id="signupEmail"
+        placeholder="Enter your email"
+    >
+
+    <small
+        class="auth-field-error"
+        id="signupEmailError"
+    ></small>
+
+</div>
+
+
+<div class="auth-field">
+
+    <label for="signupPhone">
+        Phone
+        <span class="required-mark">*</span>
+    </label>
+
+    <input
+        type="tel"
+        id="signupPhone"
+        placeholder="Enter 10 digit phone number"
+        inputmode="numeric"
+    >
+
+    <small
+        class="auth-field-error"
+        id="signupPhoneError"
+    ></small>
+
+</div>
+
+
+<div class="auth-field">
+
+    <label for="signupPassword">
+        Password
+        <span class="required-mark">*</span>
+    </label>
+
+    <input
+        type="password"
+        id="signupPassword"
+        placeholder="Minimum 8 characters"
+    >
+
+    <small
+        class="auth-field-error"
+        id="signupPasswordError"
+    ></small>
+
+</div>
+
+
+<div class="auth-field">
+
+    <label for="signupConfirmPassword">
+        Confirm Password
+        <span class="required-mark">*</span>
+    </label>
+
+    <input
+        type="password"
+        id="signupConfirmPassword"
+        placeholder="Re-enter your password"
+    >
+
+    <small
+        class="auth-field-error"
+        id="signupConfirmPasswordError"
+    ></small>
+
+</div>
+
+                        <button
+                            type="submit"
+                            class="auth-submit-btn"
+                            
+                        >
+                            CREATE ACCOUNT
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </section>
+
+
+            <!-- SIGNIN HERO -->
+
+            <section
+                class="auth-hero auth-hero-signin"
+                id="authSigninHero"
+            >
+
+                <p class="auth-eyebrow">
+                    M&M FASHION
+                </p>
+
+                <h1>
+                    Hey There!
+                </h1>
+
+                <p>
+                    New to M&M?
+                    Create an account and start shopping.
+                </p>
+
+                <button
+                    type="button"
+                    class="auth-outline-btn"
+                    id="showSignupBtn"
+                >
+                    SIGN UP
+                </button>
+
+            </section>
+
+
+            <!-- SIGNIN FORM -->
+
+            <section
+                class="auth-form signin-form"
+                id="authSigninForm"
+            >
+
+                <div class="auth-form-inner">
+
+                    <h2>
+                        Welcome Back
+                    </h2>
+
+                    <div class="auth-socials">
+
+                        <button type="button">f</button>
+
+                        <button type="button">𝕏</button>
+
+                        <button type="button">in</button>
+
+                    </div>
+
+                    <p class="auth-divider-text">
+                        Or use your email address
+                    </p>
+
+
+                    <form>
+
+                      <div class="auth-field">
+
+    <label for="signinEmail">
+        Email
+        <span class="required-mark">*</span>
+    </label>
+
+    <input
+        type="email"
+        id="signinEmail"
+        placeholder="Enter your email"
+    >
+
+    <small
+        class="auth-field-error"
+        id="signinEmailError"
+    ></small>
+
+</div>
+
+
+<div class="auth-field">
+
+    <label for="signinPassword">
+        Password
+        <span class="required-mark">*</span>
+    </label>
+
+    <input
+        type="password"
+        id="signinPassword"
+        placeholder="Enter your password"
+    >
+
+    <small
+        class="auth-field-error"
+        id="signinPasswordError"
+    ></small>
+
+</div>
+
+                        <a
+                            href="#"
+                            class="forgot-password"
+                        >
+                            Forgot password?
+                        </a>
+
+                        <button
+                            type="submit"
+                            class="auth-submit-btn"
+                            
+                        >
+                            SIGN IN
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- =========================================
+         CART DRAWER
+    ========================================== -->
+
+    <div
+    class="cart-drawer-overlay"
+    id="cartDrawerOverlay"
+    aria-hidden="true"
+></div>
+
+
+<aside
+    class="cart-drawer"
+    id="cartDrawer"
+    aria-hidden="true"
+    aria-labelledby="cartDrawerTitle"
+>
+
+<div class="cart-drawer-header">
+
+    <div>
+
+        <span class="cart-drawer-eyebrow">
+            YOUR SELECTION
+        </span>
+
+        <h2 id="cartDrawerTitle">
+            Cart
+        </h2>
+
+    </div>
+
+
+    <div class="cart-header-actions">
+
+        <button
+            type="button"
+            class="clear-cart-btn"
+            id="clearCartBtn"
+        >
+            Clear Cart
+        </button>
+
+        <button
+            type="button"
+            class="cart-drawer-close"
+            id="cartDrawerClose"
+            aria-label="Close shopping cart"
+        >
+            ×
+        </button>
+
+    </div>
+
+</div>
+
+</div>
+
+
+    <div
+        class="cart-items"
+        id="cartItems"
+    >
+        <!-- Products rendered by JavaScript -->
+    </div>
+
+
+    <div class="cart-empty" id="cartEmpty">
+
+        <span class="cart-empty-symbol">
+            ♡
+        </span>
+
+        <h3>
+            Your cart is empty
+        </h3>
+
+        <p>
+            Looks like you haven't added anything yet.
+        </p>
+
+        <button
+            type="button"
+            class="cart-empty-btn"
+            id="cartEmptyClose"
+        >
+            Continue Shopping
+        </button>
+
+    </div>
+
+
+    <div class="cart-drawer-footer">
+
+        <div class="cart-summary">
+
+            <span>
+                Subtotal
+            </span>
+
+            <strong id="cartSubtotal">
+                ₹0
+            </strong>
+
+        </div>
+
+        <p class="cart-note">
+            Shipping and taxes calculated at checkout.
+        </p>
+
+        <a
+            href="cart.html"
+            class="cart-checkout-btn"
+        >
+            View Cart
+            <span>→</span>
+        </a>
+
+    </div>
+
+</aside>
+
+
+
+
+    <!-- =========================================
+         SCRIPTS
+    ========================================== -->
+
+    <script src="./js/products.js"></script>
+
+    <script src="./js/main.js"></script>
+
+    <script src="./js/shop.js"></script>
+
+    <script src="./js/auth.js"></script>
+
+
+</body>
+
+</html>
