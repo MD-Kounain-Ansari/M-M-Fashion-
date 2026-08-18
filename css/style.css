@@ -1328,8 +1328,6 @@ html {
 
 .products-grid {
   display: grid;
-  margin-left: 25px;
-  margin-right: 25px;
 
   grid-template-columns: repeat(4, 1fr);
 
