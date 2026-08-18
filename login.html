@@ -162,9 +162,9 @@
 
             <!-- Account -->
             
-           <button
+          <button
     type="button"
-    class="nav-icon-btn nav-tooltip"
+    class="nav-icon-btn nav-tooltip auth-account-trigger"
     id="accountBtn"
     aria-label="Account"
     data-tooltip="Account"
@@ -173,10 +173,17 @@
         viewBox="0 0 24 24"
         aria-hidden="true"
     >
-        <circle cx="12" cy="8" r="3.5"></circle>
-        <path d="M5 21C5.5 16.8 8 14.5 12 14.5C16 14.5 18.5 16.8 19 21"></path>
+        <circle
+            cx="12"
+            cy="8"
+            r="3.5"
+        ></circle>
+
+        <path
+            d="M5 21C5.5 16.8 8 14.5 12 14.5C16 14.5 18.5 16.8 19 21"
+        ></path>
     </svg>
-           </button>
+</button>
 
 
             <!-- Wishlist -->
@@ -280,20 +287,16 @@
                     Collections
                 </a>
             </li>
-
-            <li class="mobile-nav-divider"></li>
-
-            <li>
-          <li>
+        
+         <li>
     <button
         type="button"
-        class="mobile-auth-account"
-        onclick="openAuthModal(event)"
+        class="mobile-auth-account auth-account-trigger"
     >
         Account
     </button>
 </li>
-            </li>
+        
 
             <li>
                 <a href="wishlist.html">Wishlist</a>

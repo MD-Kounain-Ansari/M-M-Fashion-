@@ -9770,38 +9770,26 @@ html {
   }
 }
 
+
+
 .mobile-auth-account {
   width: 100%;
 
-  padding: 0;
+  padding: 0.95rem 0;
+
+  font-size: 0.9rem;
+
+      display: block;
+   
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 
   border: 0;
 
   background: transparent;
 
-  color: inherit;
 
-  font: inherit;
-
-  font-size: inherit;
-
-  text-align: left;
-
-  cursor: pointer;
-}
-
-.mobile-auth-account {
-  width: 100%;
-
-  padding: 0;
-
-  border: 0;
-
-  background: transparent;
-
-  color: inherit;
-
-  font: inherit;
 
   text-align: left;
 
