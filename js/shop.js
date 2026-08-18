@@ -3,175 +3,117 @@
    PRODUCT RENDERING
 ========================================= */
 
-const shopProductGrid =
-    document.getElementById("shopProductGrid");
+const shopProductGrid = document.getElementById("shopProductGrid");
 
-const shopProductCount =
-    document.getElementById("shopProductCount");
+const shopProductCount = document.getElementById("shopProductCount");
 
-const shopNoResults =
-    document.getElementById("shopNoResults");
+const shopNoResults = document.getElementById("shopNoResults");
 
+const urlParams = new URLSearchParams(window.location.search);
 
+const searchQuery = urlParams.get("search") || "";
 
+const shopSearchState = document.getElementById("shopSearchState");
 
+const shopSearchQuery = document.getElementById("shopSearchQuery");
 
-const urlParams =
-    new URLSearchParams(window.location.search);
-
-const searchQuery =
-    urlParams.get("search") || "";
-
-const shopSearchState =
-    document.getElementById("shopSearchState");
-
-const shopSearchQuery =
-    document.getElementById("shopSearchQuery");
-
-const clearShopSearch =
-    document.getElementById("clearShopSearch");
-
+const clearShopSearch = document.getElementById("clearShopSearch");
 
 /* =========================================
    SEARCH PRODUCTS
 ========================================= */
 
-
-
-
 function updateShopSearchState() {
+  const query = searchQuery.trim();
 
-    const query =
-        searchQuery.trim();
+  if (!query || !shopSearchState || !shopSearchQuery) {
+    shopSearchState?.setAttribute("hidden", "");
 
-    if (
-        !query ||
-        !shopSearchState ||
-        !shopSearchQuery
-    ) {
-        shopSearchState?.setAttribute(
-            "hidden",
-            ""
-        );
+    return;
+  }
 
-        return;
-    }
+  shopSearchQuery.textContent = `"${query}"`;
 
-
-    shopSearchQuery.textContent =
-        `"${query}"`;
-
-    shopSearchState.removeAttribute(
-        "hidden"
-    );
-
+  shopSearchState.removeAttribute("hidden");
 }
 
 function getSearchFilteredProducts(productList) {
+  const query = searchQuery.trim().toLowerCase();
 
-    const query =
-        searchQuery.trim().toLowerCase();
+  if (!query) {
+    return [...productList];
+  }
 
-    if (!query) {
-        return [...productList];
-    }
+  return productList.filter((product) => {
+    const searchableText = [product.name, product.category, product.badge]
+      .filter(Boolean)
+      .join(" ")
+      .toLowerCase();
 
-    return productList.filter((product) => {
-
-        const searchableText = [
-            product.name,
-            product.category,
-            product.badge
-        ]
-            .filter(Boolean)
-            .join(" ")
-            .toLowerCase();
-
-        return searchableText.includes(query);
-
-    });
+    return searchableText.includes(query);
+  });
 }
 
-clearShopSearch?.addEventListener(
-    "click",
-    () => {
-
-        window.location.href =
-            "shop.html";
-
-    }
-);
-
+clearShopSearch?.addEventListener("click", () => {
+  window.location.href = "shop.html";
+});
 
 /* =========================================
    FORMAT PRICE
 ========================================= */
 
 function formatShopPrice(price) {
-    return `₹${price.toLocaleString("en-IN")}`;
+  return `₹${price.toLocaleString("en-IN")}`;
 }
-
 
 /* =========================================
    RENDER PRODUCTS
 ========================================= */
 function renderShopProducts(productList) {
+  if (!shopProductGrid) {
+    return;
+  }
 
-    if (!shopProductGrid) {
-        return;
-    }
+  shopProductGrid.innerHTML = "";
 
-    shopProductGrid.innerHTML = "";
+  if (shopProductCount) {
+    shopProductCount.textContent = `${productList.length} ${
+      productList.length === 1 ? "Product" : "Products"
+    }`;
+  }
 
-    if (shopProductCount) {
-        shopProductCount.textContent =
-            `${productList.length} ${
-                productList.length === 1
-                    ? "Product"
-                    : "Products"
-            }`;
-    }
+  if (productList.length === 0) {
+    shopNoResults?.removeAttribute("hidden");
 
-    if (productList.length === 0) {
+    return;
+  }
 
-        shopNoResults?.removeAttribute("hidden");
+  shopNoResults?.setAttribute("hidden", "");
 
-        return;
-    }
+  productList.forEach((product) => {
+    const card = document.createElement("article");
 
-    shopNoResults?.setAttribute("hidden", "");
+    card.className = "shop-product-card";
 
-    productList.forEach((product) => {
-
-        const card =
-            document.createElement("article");
-
-        card.className =
-            "shop-product-card";
-
-        const oldPriceHTML =
-            product.oldPrice
-                ? `
+    const oldPriceHTML = product.oldPrice
+      ? `
                     <span class="shop-old-price">
                         ${formatShopPrice(product.oldPrice)}
                     </span>
                 `
-                : "";
+      : "";
 
-        const badgeHTML =
-            product.badge
-                ? `
+    const badgeHTML = product.badge
+      ? `
                     <span class="shop-product-badge ${
-                        product.badge === "SALE"
-                            ? "sale"
-                            : ""
+                      product.badge === "SALE" ? "sale" : ""
                     }">
                         ${product.badge}
                     </span>
                 `
-                : "";
+      : "";
 
-        card.innerHTML = `
+    card.innerHTML = `
 
             <div class="shop-product-image-wrapper">
 
@@ -231,12 +173,11 @@ function renderShopProducts(productList) {
             </div>
         `;
 
-        shopProductGrid.appendChild(card);
+    shopProductGrid.appendChild(card);
+  });
 
-    });
-
-    // THIS IS THE IMPORTANT PART
-    updateShopWishlistButtons();
+  // THIS IS THE IMPORTANT PART
+  updateShopWishlistButtons();
 }
 
 /* =========================================
@@ -244,497 +185,328 @@ function renderShopProducts(productList) {
 ========================================= */
 
 function updateShopWishlistButtons() {
+  const wishlist = JSON.parse(localStorage.getItem("mmWishlist") || "[]").map(
+    String,
+  );
 
-    const wishlist = JSON.parse(
-        localStorage.getItem("mmWishlist") || "[]"
-    ).map(String);
+  const buttons = document.querySelectorAll(".shop-wishlist-btn");
 
-    const buttons = document.querySelectorAll(
-        ".shop-wishlist-btn"
+  buttons.forEach((button) => {
+    const productId = String(button.dataset.productId);
+
+    const isWishlisted = wishlist.includes(productId);
+
+    button.textContent = isWishlisted ? "♥" : "♡";
+
+    button.classList.toggle("is-wishlisted", isWishlisted);
+
+    button.setAttribute(
+      "aria-label",
+      isWishlisted ? "Remove from wishlist" : "Add to wishlist",
     );
-
-    buttons.forEach((button) => {
-
-        const productId =
-            String(button.dataset.productId);
-
-        const isWishlisted =
-            wishlist.includes(productId);
-
-        button.textContent =
-            isWishlisted ? "♥" : "♡";
-
-        button.classList.toggle(
-            "is-wishlisted",
-            isWishlisted
-        );
-
-        button.setAttribute(
-            "aria-label",
-            isWishlisted
-                ? "Remove from wishlist"
-                : "Add to wishlist"
-        );
-
-    });
+  });
 }
 
 /* =========================================
    SHOP FILTER + SORT STATE
 ========================================= */
 
-const shopParams =
-    new URLSearchParams(
-        window.location.search
-    );
+const shopParams = new URLSearchParams(window.location.search);
 
-const urlFilter =
-    shopParams.get("filter");
-
+const urlFilter = shopParams.get("filter");
 
 const allowedFilters = [
-    "all",
-    "men",
-    "unisex",
-    "new",
-    "sale"
+  "all",
+  "men",
+  "unisex",
+  "new",
+  "sale",
+  "accessories",
+  "caps",
 ];
 
-
-let activeFilter =
-    allowedFilters.includes(urlFilter)
-        ? urlFilter
-        : "all";
-
+let activeFilter = allowedFilters.includes(urlFilter) ? urlFilter : "all";
 
 let activeSort = "newest";
-
 
 /* =========================================
    SHOP ELEMENTS
 ========================================= */
 
-const shopFilters =
-    document.querySelectorAll(".shop-filter");
+const shopFilters = document.querySelectorAll(".shop-filter");
 
-const sortProducts =
-    document.getElementById("sortProducts");
+const sortProducts = document.getElementById("sortProducts");
 
-const resetShopFilters =
-    document.getElementById("resetShopFilters");
-
+const resetShopFilters = document.getElementById("resetShopFilters");
 
 /* =========================================
    SET INITIAL ACTIVE FILTER
 ========================================= */
 
 shopFilters.forEach((button) => {
-
-    button.classList.toggle(
-        "active",
-        button.dataset.filter === activeFilter
-    );
-
+  button.classList.toggle("active", button.dataset.filter === activeFilter);
 });
-
-
 
 /* =========================================
    GET FILTERED PRODUCTS
 ========================================= */
 
 function getFilteredProducts() {
+  switch (activeFilter) {
+    case "men":
+      return products.filter(
+        (product) => product.category.toLowerCase() === "men",
+      );
 
-    switch (activeFilter) {
+    case "unisex":
+      return products.filter(
+        (product) => product.category.toLowerCase() === "unisex",
+      );
 
-        case "men":
+    case "new":
+      return products.filter((product) => product.badge === "NEW");
 
-            return products.filter(
-                (product) =>
-                    product.category.toLowerCase() === "men"
-            );
+    case "sale":
+      return products.filter((product) => product.badge === "SALE");
 
+    case "accessories":
+      return products.filter(
+        (product) => product.category.toLowerCase() === "accessories",
+      );
 
-        case "unisex":
+    case "caps":
+      return products.filter(
+        (product) => product.category.toLowerCase() === "caps",
+      );
 
-            return products.filter(
-                (product) =>
-                    product.category.toLowerCase() === "unisex"
-            );
-
-
-        case "new":
-
-            return products.filter(
-                (product) =>
-                    product.badge === "NEW"
-            );
-
-
-        case "sale":
-
-            return products.filter(
-                (product) =>
-                    product.badge === "SALE"
-            );
-
-
-        case "all":
-        default:
-
-            return [...products];
-    }
+    case "all":
+    default:
+      return [...products];
+  }
 }
-
 
 /* =========================================
    SORT PRODUCTS
 ========================================= */
 
 function sortShopProducts(productList) {
+  const sortedProducts = [...productList];
 
-    const sortedProducts = [...productList];
+  switch (activeSort) {
+    case "price-low":
+      sortedProducts.sort((a, b) => a.price - b.price);
 
-    switch (activeSort) {
+      break;
 
-        case "price-low":
+    case "price-high":
+      sortedProducts.sort((a, b) => b.price - a.price);
 
-            sortedProducts.sort(
-                (a, b) => a.price - b.price
-            );
+      break;
 
-            break;
+    case "newest":
 
-
-        case "price-high":
-
-            sortedProducts.sort(
-                (a, b) => b.price - a.price
-            );
-
-            break;
-
-
-        case "newest":
-
-        default:
-
-            /*
+    default:
+      /*
                products.js is already stored
                newest-first for now.
             */
 
-            break;
-    }
+      break;
+  }
 
-    return sortedProducts;
+  return sortedProducts;
 }
-
 
 /* =========================================
    UPDATE SHOP
 ========================================= */
 
 function updateShopProducts() {
+  let filteredProducts = getFilteredProducts();
 
-    let filteredProducts =
-        getFilteredProducts();
+  /* Apply search */
 
+  filteredProducts = getSearchFilteredProducts(filteredProducts);
 
-    /* Apply search */
+  /* Apply sorting */
 
-    filteredProducts =
-        getSearchFilteredProducts(
-            filteredProducts
-        );
+  const sortedProducts = sortShopProducts(filteredProducts);
 
-
-    /* Apply sorting */
-
-    const sortedProducts =
-        sortShopProducts(
-            filteredProducts
-        );
-
-
-    renderShopProducts(
-        sortedProducts
-    );
-
+  renderShopProducts(sortedProducts);
 }
-
 
 /* =========================================
    FILTER BUTTONS
 ========================================= */
 
 shopFilters.forEach((button) => {
+  button.addEventListener("click", () => {
+    /* Active filter */
 
-    button.addEventListener("click", () => {
-
-        /* Active filter */
-
-        shopFilters.forEach((item) => {
-            item.classList.remove("active");
-        });
-
-        button.classList.add("active");
-
-
-        /* Save filter */
-
-        activeFilter =
-            button.dataset.filter;
-
-
-        /* Re-render */
-
-        updateShopProducts();
-
+    shopFilters.forEach((item) => {
+      item.classList.remove("active");
     });
 
-});
+    button.classList.add("active");
 
+    /* Save filter */
+
+    activeFilter = button.dataset.filter;
+
+    /* Re-render */
+
+    updateShopProducts();
+  });
+});
 
 /* =========================================
    SORT DROPDOWN
 ========================================= */
 
-sortProducts?.addEventListener(
-    "change",
-    () => {
+sortProducts?.addEventListener("change", () => {
+  activeSort = sortProducts.value;
 
-        activeSort =
-            sortProducts.value;
-
-        updateShopProducts();
-
-    }
-);
-
+  updateShopProducts();
+});
 
 /* =========================================
    RESET
 ========================================= */
 
-resetShopFilters?.addEventListener(
-    "click",
-    () => {
+resetShopFilters?.addEventListener("click", () => {
+  activeFilter = "all";
+  activeSort = "newest";
 
-        activeFilter = "all";
-        activeSort = "newest";
+  shopFilters.forEach((button) => {
+    button.classList.remove("active");
+  });
 
-        shopFilters.forEach((button) => {
-            button.classList.remove("active");
-        });
+  const allButton = document.querySelector('.shop-filter[data-filter="all"]');
 
-        const allButton =
-            document.querySelector(
-                '.shop-filter[data-filter="all"]'
-            );
+  allButton?.classList.add("active");
 
-        allButton?.classList.add("active");
+  if (sortProducts) {
+    sortProducts.value = "newest";
+  }
 
-        if (sortProducts) {
-            sortProducts.value = "newest";
-        }
+  /* Remove search query completely */
 
-        /* Remove search query completely */
-
-        window.location.href = "shop.html";
-
-    }
-);
+  window.location.href = "shop.html";
+});
 
 /* =========================================
    SHOP WISHLIST
 ========================================= */
 
 function getShopWishlist() {
-    return JSON.parse(
-        localStorage.getItem("mmWishlist") || "[]"
-    ).map(String);
+  return JSON.parse(localStorage.getItem("mmWishlist") || "[]").map(String);
 }
-
 
 function saveShopWishlist(wishlist) {
-    localStorage.setItem(
-        "mmWishlist",
-        JSON.stringify(wishlist)
-    );
+  localStorage.setItem("mmWishlist", JSON.stringify(wishlist));
 }
-
 
 /* =========================================
    UPDATE HEARTS
 ========================================= */
 
 function updateShopWishlistButtons() {
+  const wishlist = getShopWishlist();
 
-    const wishlist = getShopWishlist();
+  const buttons = document.querySelectorAll(".shop-wishlist-btn");
 
-    const buttons = document.querySelectorAll(
-        ".shop-wishlist-btn"
+  buttons.forEach((button) => {
+    const productId = String(button.dataset.productId);
+
+    const saved = wishlist.includes(productId);
+
+    button.textContent = saved ? "♥" : "♡";
+
+    button.classList.toggle("is-wishlisted", saved);
+
+    button.setAttribute(
+      "aria-label",
+      saved ? "Remove from wishlist" : "Add to wishlist",
     );
-
-    buttons.forEach((button) => {
-
-        const productId =
-            String(button.dataset.productId);
-
-        const saved =
-            wishlist.includes(productId);
-
-        button.textContent = saved ? "♥" : "♡";
-
-        button.classList.toggle(
-            "is-wishlisted",
-            saved
-        );
-
-        button.setAttribute(
-            "aria-label",
-            saved
-                ? "Remove from wishlist"
-                : "Add to wishlist"
-        );
-
-    });
+  });
 }
-
 
 /* =========================================
    WISHLIST CLICK
 ========================================= */
 
-shopProductGrid?.addEventListener(
-    "click",
-    (event) => {
+shopProductGrid?.addEventListener("click", (event) => {
+  const button = event.target.closest(".shop-wishlist-btn");
 
-        const button =
-            event.target.closest(
-                ".shop-wishlist-btn"
-            );
+  if (!button) {
+    return;
+  }
 
-        if (!button) {
-            return;
-        }
+  event.preventDefault();
+  event.stopPropagation();
 
-        event.preventDefault();
-        event.stopPropagation();
+  const productId = String(button.dataset.productId);
 
-        const productId =
-            String(button.dataset.productId);
+  let wishlist = getShopWishlist();
 
-        let wishlist =
-            getShopWishlist();
+  const index = wishlist.indexOf(productId);
 
-        const index =
-            wishlist.indexOf(productId);
+  if (index === -1) {
+    wishlist.push(productId);
 
-        if (index === -1) {
+    showShopToast("Added to wishlist");
+  } else {
+    wishlist.splice(index, 1);
 
-            wishlist.push(productId);
+    showShopToast("Removed from wishlist");
+  }
 
-            showShopToast(
-                "Added to wishlist"
-            );
+  saveShopWishlist(wishlist);
 
-        } else {
-
-            wishlist.splice(index, 1);
-
-            showShopToast(
-                "Removed from wishlist"
-            );
-
-        }
-
-        saveShopWishlist(wishlist);
-
-        updateShopWishlistButtons();
-
-    }
-);
+  updateShopWishlistButtons();
+});
 
 /* =========================================
    SHOP ADD TO CART
 ========================================= */
 
-shopProductGrid?.addEventListener(
-    "click",
-    (event) => {
+shopProductGrid?.addEventListener("click", (event) => {
+  const cartButton = event.target.closest(".shop-add-cart-btn");
 
-        const cartButton =
-            event.target.closest(
-                ".shop-add-cart-btn"
-            );
+  if (!cartButton) {
+    return;
+  }
 
-        if (!cartButton) {
-            return;
-        }
+  event.preventDefault();
 
-        event.preventDefault();
+  const productId = Number(cartButton.dataset.productId);
 
-        const productId =
-            Number(
-                cartButton.dataset.productId
-            );
-
-        if (
-            typeof addToCart === "function"
-        ) {
-            addToCart(productId);
-        }
-
-    }
-);
-
+  if (typeof addToCart === "function") {
+    addToCart(productId);
+  }
+});
 
 function showShopToast(message) {
+  let toast = document.getElementById("shopToast");
 
-    let toast =
-        document.getElementById(
-            "shopToast"
-        );
+  if (!toast) {
+    toast = document.createElement("div");
 
+    toast.id = "shopToast";
 
-    if (!toast) {
+    toast.className = "cart-toast";
 
-        toast =
-            document.createElement("div");
+    document.body.appendChild(toast);
+  }
 
-        toast.id =
-            "shopToast";
+  toast.textContent = message;
 
-        toast.className =
-            "cart-toast";
+  toast.classList.add("show");
 
-        document.body.appendChild(
-            toast
-        );
-
-    }
-
-
-    toast.textContent =
-        message;
-
-    toast.classList.add(
-        "show"
-    );
-
-
-    setTimeout(() => {
-
-        toast.classList.remove(
-            "show"
-        );
-
-    }, 2200);
-
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 2200);
 }
-
 
 /* =========================================
    INITIALIZE
@@ -743,18 +515,8 @@ function showShopToast(message) {
 updateShopSearchState();
 updateShopProducts();
 
-if (
-    typeof products !== "undefined" &&
-    Array.isArray(products)
-) {
-
-    updateShopProducts();
-
+if (typeof products !== "undefined" && Array.isArray(products)) {
+  updateShopProducts();
 } else {
-
-    console.error(
-        "Product data is not available. Check products.js."
-    );
-
+  console.error("Product data is not available. Check products.js.");
 }
-

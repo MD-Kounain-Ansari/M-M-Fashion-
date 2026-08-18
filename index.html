@@ -11,6 +11,12 @@
 
     <title>M&M Fashion</title>
 
+    <link
+    rel="icon"
+    type="image/png"
+    href="./assets/images/logo/favicon.png"
+>
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -312,11 +318,22 @@
     <section class="hero">
 
         <!-- Hero Image -->
-        <img
-            src="./assets/images/banners/hero.jpg"
-            alt="M&M Fashion new season collection"
-            class="hero-image"
-        >
+       <picture>
+
+    <!-- Mobile / Tablet -->
+    <source
+        media="(max-width: 1024px)"
+        srcset="./assets/images/banners/hero.jpg"
+    >
+
+    <!-- Desktop / Laptop -->
+    <img
+        src="./assets/images/banners/hero-Laptop.jpg"
+        alt="M&M Fashion new season collection"
+        class="hero-image"
+    >
+
+</picture>
 
         <!-- Dark Overlay -->
         <div class="hero-overlay"></div>
@@ -334,10 +351,6 @@
                 <span>EVERYDAY.</span>
             </h1>
 
-            <p class="hero-description">
-                Contemporary fashion designed for
-                everyday confidence, comfort and style.
-            </p>
 
             <a
                 href="shop.html"
@@ -892,6 +905,127 @@
 
             </article>
 
+            <!-- Product 09 -->
+
+            <article class="product-card">
+
+    <div class="product-image-wrapper">
+
+        <a
+            href="product.html?id=9"
+            class="product-image-link"
+        >
+            <img
+                src="./assets/images/products/product-09.jpg"
+                alt="Men's Frayed Patchwork Wide Leg Pants"
+                class="product-image"
+                loading="lazy"
+            >
+        </a>
+
+        <span class="product-badge">
+            New
+        </span>
+
+        <button
+            type="button"
+            class="wishlist-btn"
+            data-product-id="9"
+            aria-label="Add Men's Frayed Patchwork Wide Leg Pants to wishlist"
+            data-tooltip="Add to Wishlist"
+        >
+            ♡
+        </button>
+
+    </div>
+
+    <button
+        type="button"
+        class="add-to-cart-btn"
+        data-product-id="9"
+    >
+        Add to Cart
+    </button>
+
+    <div class="product-info">
+
+        <p class="product-category">
+            MEN
+        </p>
+
+        <h3 class="product-name">
+            Men's Frayed Patchwork Wide Leg Pants
+        </h3>
+
+        <div class="product-price">
+            ₹2,799
+        </div>
+
+    </div>
+
+</article>
+
+<!-- Product 10 -->
+
+
+<article class="product-card">
+
+    <div class="product-image-wrapper">
+
+        <a
+            href="product.html?id=18"
+            class="product-image-link"
+        >
+            <img
+                src="./assets/images/products/product-18.jpg"
+                alt="Green-black-white Plaid Flannel shirt"
+                class="product-image"
+                loading="lazy"
+            >
+        </a>
+
+        <span class="product-badge">
+            New
+        </span>
+
+        <button
+            type="button"
+            class="wishlist-btn"
+            data-product-id="18"
+            aria-label="Add Green-black-white Plaid Flannel shirt to wishlist"
+            data-tooltip="Add to Wishlist"
+        >
+            ♡
+        </button>
+
+    </div>
+
+    <button
+        type="button"
+        class="add-to-cart-btn"
+        data-product-id="18"
+    >
+        Add to Cart
+    </button>
+
+    <div class="product-info">
+
+        <p class="product-category">
+            UNISEX
+        </p>
+
+        <h3 class="product-name">
+            Green-black-white Plaid Flannel shirt
+        </h3>
+
+        <div class="product-price">
+            ₹1,999
+        </div>
+
+    </div>
+
+</article>
+
         </div>
 
     </div>
@@ -1018,13 +1152,15 @@
 
     <div class="campaign-slider">
 
+
         <!-- SLIDE 01 -->
-        <article class="campaign-slide active">
+        <article class="campaign-slide">
 
             <img
-                src="./assets/images/compaigns/formal.jpg"
-                alt="M&M Formal Collection"
+                src="./assets/images/compaigns/basics.jpg"
+                alt="M&M Basics Collection"
                 class="campaign-image"
+                loading="lazy"
             >
 
             <div class="campaign-overlay"></div>
@@ -1032,16 +1168,15 @@
             <div class="campaign-content">
 
 
-
                 <h2 class="campaign-title">
-                    Formal
+                    M&M Basics
                 </h2>
 
                 <a
-                    href="shop.html?category=formal"
+                    href="shop.html?filter=all"
                     class="campaign-button"
                 >
-                    Shop Formal
+                    Shop Basics
                     <span aria-hidden="true">→</span>
                 </a>
 
@@ -1070,7 +1205,7 @@
                 </h2>
 
                 <a
-                    href="shop.html?category=accessories"
+                    href="shop.html?filter=accessories"
                     class="campaign-button"
                 >
                     Shop Accessories
@@ -1082,39 +1217,8 @@
         </article>
 
 
+
         <!-- SLIDE 03 -->
-        <article class="campaign-slide">
-
-            <img
-                src="./assets/images/compaigns/winter.jpg"
-                alt="M&M Winter Collection"
-                class="campaign-image"
-                loading="lazy"
-            >
-
-            <div class="campaign-overlay"></div>
-
-            <div class="campaign-content">
-
-
-                <h2 class="campaign-title">
-                    Winter Collection 2026
-                </h2>
-
-                <a
-                    href="shop.html?category=winter"
-                    class="campaign-button"
-                >
-                    Shop Winter
-                    <span aria-hidden="true">→</span>
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <!-- SLIDE 04 -->
         <article class="campaign-slide">
 
             <img
@@ -1134,7 +1238,7 @@
                 </h2>
 
                 <a
-                    href="shop.html?category=caps"
+                    href="shop.html?filter=caps"
                     class="campaign-button"
                 >
                     Shop Caps
@@ -1146,36 +1250,7 @@
         </article>
 
 
-        <!-- SLIDE 05 -->
-        <article class="campaign-slide">
-
-            <img
-                src="./assets/images/compaigns/basics.jpg"
-                alt="M&M Basics Collection"
-                class="campaign-image"
-                loading="lazy"
-            >
-
-            <div class="campaign-overlay"></div>
-
-            <div class="campaign-content">
-
-
-                <h2 class="campaign-title">
-                    M&M Basics
-                </h2>
-
-                <a
-                    href="shop.html?category=basics"
-                    class="campaign-button"
-                >
-                    Shop Basics
-                    <span aria-hidden="true">→</span>
-                </a>
-
-            </div>
-
-        </article>
+        
 
 
         <!-- PREVIOUS BUTTON -->
@@ -1220,20 +1295,6 @@
                 class="campaign-dot"
                 data-slide="2"
                 aria-label="Go to Winter Collection campaign"
-            ></button>
-
-            <button
-                type="button"
-                class="campaign-dot"
-                data-slide="3"
-                aria-label="Go to Caps campaign"
-            ></button>
-
-            <button
-                type="button"
-                class="campaign-dot"
-                data-slide="4"
-                aria-label="Go to M&M Basics campaign"
             ></button>
 
         </div>
