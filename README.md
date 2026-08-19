@@ -1,4 +1,4 @@
-# M&M Fashion
+# M&M Fashion {NOT A REAL STORE}
 
 A modern, responsive fashion e-commerce frontend built with **HTML, CSS, and JavaScript**.
 
