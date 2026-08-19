@@ -7,6 +7,8 @@
    1. DESIGN TOKENS
 ========================================= */
 
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
 :root {
   /* Brand Colors */
   --color-primary-bg: #fffaf3;
@@ -58,7 +60,6 @@ body {
   min-height: 100vh;
   background-color: var(--color-primary-bg);
   color: var(--color-black);
-  font-family: Arial, Helvetica, sans-serif;
   line-height: 1.5;
   overflow-x: hidden;
 }
@@ -101,6 +102,10 @@ ol {
    3. TYPOGRAPHY
 ========================================= */
 
+body {
+  font-family: "Manrope", sans-serif;
+}
+
 h1,
 h2,
 h3,
@@ -109,6 +114,7 @@ h5,
 h6 {
   line-height: 1.1;
   letter-spacing: -0.02em;
+  font-family: "Space Grotesk", sans-serif;
   font-weight: 600;
 }
 
@@ -195,6 +201,7 @@ p {
   border: 1px solid transparent;
   border-radius: var(--radius-sm);
 
+  font-family: "Space Grotesk", sans-serif;
   font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -426,6 +433,7 @@ html {
 ========================================= */
 
 .nav-links {
+  font-family: "Manrope", sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -915,6 +923,7 @@ html {
   margin-bottom: 1.5rem;
 
   color: var(--color-white);
+  font-family: "Space Grotesk", sans-serif;
 
   font-size: clamp(3rem, 7vw, 7rem);
   font-weight: 600;
@@ -1558,6 +1567,7 @@ html {
 .product-name {
   margin-bottom: 0.5rem;
 
+  font-family: "Space Grotesk", sans-serif;
   font-size: 1rem;
   font-weight: 500;
 
@@ -9768,8 +9778,6 @@ html {
   }
 }
 
-
-
 .mobile-auth-account {
   width: 100%;
 
@@ -9777,17 +9785,15 @@ html {
 
   font-size: 0.9rem;
 
-      display: block;
-   
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+  display: block;
+
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 
   border: 0;
 
   background: transparent;
-
-
 
   text-align: left;
 

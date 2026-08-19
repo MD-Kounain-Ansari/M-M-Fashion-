@@ -97,11 +97,11 @@ window.products = [
   {
     id: 2,
 
-    name: "Slim Fit Polo T-shirt",
+    name: "Black Hellstar graphic Long-Sleeve T-shirt",
 
     category: "Men",
 
-    price: 2199,
+    price: 1199,
 
     oldPrice: null,
 
@@ -122,9 +122,9 @@ window.products = [
 
     reviews: [],
 
-    description: "Slim-fit polo T-shirt with a clean minimal finish.",
+    description: "Hellstar graphic Long-Sleeve T-shirt with a clean minimal finish.",
 
-    fit: "Slim fit. Model is wearing size M.",
+    fit: "Relaxed fit. Model is wearing size M.",
 
     material: "Cotton blend",
 
@@ -270,11 +270,11 @@ window.products = [
   {
     id: 5,
 
-    name: "Dark Brown Relaxed Fit Long-sleeved T-shirt",
+    name: "Brown Graphic Crewneck Sweatshirt",
 
-    category: "Unisex",
+    category: "Men",
 
-    price: 1499,
+    price: 1199,
 
     oldPrice: null,
 
@@ -306,7 +306,7 @@ window.products = [
     /* PRODUCT INFORMATION */
 
     description:
-      "Dark brown long-sleeved T-shirt with a relaxed everyday silhouette.",
+      "Brown Graphic Crewneck Sweatshirt with a relaxed everyday silhouette.",
 
     fit: "Relaxed fit. Designed for a comfortable oversized look.",
 
@@ -394,11 +394,11 @@ window.products = [
   {
     id: 7,
 
-    name: "Beige Slim Fit Ribbed Henley Shirt",
+    name: "White Short-Sleeve Graphic T-Shirt",
 
     category: "Men",
 
-    price: 2299,
+    price: 1299,
 
     oldPrice: null,
 
@@ -430,9 +430,9 @@ window.products = [
     /* PRODUCT INFORMATION */
 
     description:
-      "Beige ribbed Henley shirt with a slim contemporary silhouette.",
+      "White Short-Sleeve Graphic T-Shirt with  contemporary silhouette.",
 
-    fit: "Slim fit. Designed to sit closer to the body.",
+    fit: "Relaxed fit. Designed to sit closer to the body.",
 
     material: "Cotton blend",
 
@@ -456,11 +456,11 @@ window.products = [
   {
     id: 8,
 
-    name: "Regular Fit Felted Overshirt",
+    name: "Yellow-White Striped Long-Sleeve Top",
 
     category: "Men",
 
-    price: 2999,
+    price: 1199,
 
     oldPrice: null,
 
@@ -471,7 +471,8 @@ window.products = [
     /* IMAGES */
 
     image: "./assets/images/products/product-08.jpg",
-    images: ["./assets/images/products/product-08.jpg"],
+    images: [ "./assets/images/products/product-08.jpg",
+      "./assets/images/products/product-08-1.jpg"],
 
     /* COLORS */
 
@@ -492,9 +493,9 @@ window.products = [
     /* PRODUCT INFORMATION */
 
     description:
-      "Regular-fit felted overshirt designed for layering and everyday wear.",
+      "Relaxed-fit Long-Sleeve Top designed for layering and everyday wear.",
 
-    fit: "Regular fit. Allows comfortable layering over basic tops.",
+    fit: "Relaxed fit. Allows comfortable layering over basic tops.",
 
     material: "Wool blend",
 
@@ -907,50 +908,50 @@ window.products = [
     alsoBought: [11, 13],
   },
 
-  // /* =========================================
-  //    PRODUCT 19 - SHOP
-  // ========================================= */
+   /* =========================================
+      PRODUCT 19 - SHOP
+   ========================================= */
 
-  // {
-  //     id: 19,
-  //     name: "Light Grey Essential Sweatshirt",
-  //     category: "Unisex",
-  //     price: 2299,
-  //     oldPrice: null,
-  //     badge: "",
-  //     discount: null,
+   {
+       id: 19,
+      name: "White-Orange Striped Long-Sleeve crewneck T-shirt",
+      category: "Men",
+     price: 1299,
+       oldPrice: null,
+       badge: "",
+       discount: null,
 
-  //     image: "./assets/images/products/product-19.jpg",
-  //     images: ["./assets/images/products/product-19.jpg"],
+       image: "./assets/images/products/product-19.jpg",
+       images: ["./assets/images/products/product-19.jpg"],
 
-  //     colors: [],
-  //     sizes: ["S", "M", "L", "XL", "XXL"],
+      colors: [],
+       sizes: ["S", "M", "L", "XL", "XXL"],
 
-  //     rating: 4.8,
-  //     reviewCount: 17,
-  //     reviews: [],
+      rating: 4.8,
+      reviewCount: 17,
+      reviews: [],
 
-  //     description:
-  //         "Minimal light grey sweatshirt built for everyday comfort.",
+      description:
+           "Minimal White-Orange Striped Long-Sleeve Crewneck built for everyday comfort.",
 
-  //     fit:
-  //         "Relaxed fit.",
+       fit:
+           "Relaxed fit.",
 
-  //     material:
-  //         "Cotton fleece",
+       material:
+           "Cotton fleece",
 
-  //     care:
-  //         "Machine wash cold.",
+       care:
+           "Machine wash cold.",
 
-  //     delivery:
-  //         "Delivered within 3–5 business days.",
+       delivery:
+          "Delivered within 3–5 business days.",
 
-  //     payment:
-  //         "Secure online payment and cash on delivery available.",
+      payment:
+          "Secure online payment and cash on delivery available.",
 
-  //     similarProducts: [16, 18, 20],
-  //     alsoBought: [14, 15]
-  // },
+      similarProducts: [16, 18, 20],
+       alsoBought: [14, 15]
+   },
 
   // /* =========================================
   //    PRODUCT 20 - SHOP
