@@ -953,50 +953,50 @@ window.products = [
        alsoBought: [14, 15]
    },
 
-  // /* =========================================
-  //    PRODUCT 20 - SHOP
-  // ========================================= */
+  /* =========================================
+     PRODUCT 20 - SHOP
+  ========================================= */
 
-  // {
-  //     id: 20,
-  //     name: "Black Relaxed Cargo Pants",
-  //     category: "Men",
-  //     price: 2599,
-  //     oldPrice: null,
-  //     badge: "NEW",
-  //     discount: null,
+  {
+      id: 20,
+      name: "Spain 26 Away Jersey Lamine Yamal Edition",
+      category: "Unisex",
+      price: 999,
+      oldPrice: null,
+      badge: "NEW",
+      discount: null,
 
-  //     image: "./assets/images/products/product-20.jpg",
-  //     images: ["./assets/images/products/product-20.jpg"],
+      image: "./assets/images/products/product-20.jpg",
+      images: ["./assets/images/products/product-20.jpg"],
 
-  //     colors: [],
-  //     sizes: ["28", "30", "32", "34", "36"],
+      colors: [],
+      sizes: ["28", "30", "32", "34", "36"],
 
-  //     rating: 4.7,
-  //     reviewCount: 12,
-  //     reviews: [],
+      rating: 4.7,
+      reviewCount: 12,
+      reviews: [],
 
-  //     description:
-  //         "Relaxed black cargo pants with functional everyday styling.",
+      description:
+          "Regular Spain Away Jersey everyday styling.",
 
-  //     fit:
-  //         "Relaxed fit.",
+      fit:
+          "Regular fit.",
 
-  //     material:
-  //         "Cotton ripstop",
+      material:
+          "Cotton ripstop",
 
-  //     care:
-  //         "Machine wash cold.",
+      care:
+          "Machine wash cold.",
 
-  //     delivery:
-  //         "Delivered within 3–5 business days.",
+      delivery:
+          "Delivered within 3–5 business days.",
 
-  //     payment:
-  //         "Secure online payment and cash on delivery available.",
+      payment:
+          "Secure online payment and cash on delivery available.",
 
-  //     similarProducts: [16, 18, 14],
-  //     alsoBought: [12, 17]
-  // },
+      similarProducts: [16, 18, 14],
+      alsoBought: [12, 17]
+  },
 
   /* =========================================
    PRODUCT 21 - ACCESSORIES
